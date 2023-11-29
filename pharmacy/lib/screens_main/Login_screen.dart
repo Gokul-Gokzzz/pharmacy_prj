@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health/screens_main/home_screen.dart';
+import 'package:health/screens_main/product_screen.dart';
+import 'package:health/screens_main/setting_screen.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -89,7 +91,11 @@ class _LoginpageState extends State<Loginpage> {
                     child: GestureDetector(
               onTap: (){
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Home_scren()));
+                    MaterialPageRoute(builder: (context) => 
+                    // Home_screen()
+                    // Setting()
+                    Product()
+                    ));
               },
               child: Container(
                 height: 53,
