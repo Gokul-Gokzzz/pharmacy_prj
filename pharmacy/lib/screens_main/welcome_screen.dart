@@ -37,7 +37,7 @@ class _WelcomeState extends State<Welcome> {
           const SizedBox(height: 30,),
           GestureDetector(
             onTap: (){
-              Navigator.push(context,
+              Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => const Loginpage()));
             },
             child: Container(
@@ -57,7 +57,7 @@ class _WelcomeState extends State<Welcome> {
            const SizedBox(height: 30,),
            GestureDetector(
              onTap: (){
-               Navigator.push(context,
+               Navigator.pushReplacement(context,
                    MaterialPageRoute(builder: (context) => const Loginpage()));
              },
              child: Container(

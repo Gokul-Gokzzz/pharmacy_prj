@@ -2,10 +2,14 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:health/screens_main/health_care.dart';
+import 'package:health/screens_main/offer_zone.dart';
+import 'package:health/screens_main/premium.dart';
 import 'package:health/screens_main/product_screen.dart';
-import 'package:health/screens_main/setting_screen.dart';
 import 'package:health/tab.dart/app_bar.dart';
 import 'package:health/tab.dart/bottom_bar.dart';
+import 'package:health/tab.dart/shopping_screen.dart';
+
 
 
 class Home_screen extends StatefulWidget {
@@ -16,11 +20,7 @@ class Home_screen extends StatefulWidget {
 }
 
 class _Home_screenState extends State<Home_screen> {
-  //  final List _tabs = [
-  //   Home_screen(),
-  //   Product(),
-  //   Setting()
-  // ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +53,9 @@ class _Home_screenState extends State<Home_screen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Product()));
+                      },
                       child: Column(
                         children: [
                           Container(
@@ -88,7 +90,9 @@ class _Home_screenState extends State<Home_screen> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Health()));
+                      },
                       child: Column(
                         children: [
                           Container(
@@ -158,7 +162,7 @@ class _Home_screenState extends State<Home_screen> {
                             color: Colors.white,
                             image: DecorationImage(
                                 image: AssetImage(
-                                    'assets/istockphoto-1421629383-170667a.png'),
+                                    'assets/azithromycin-500-tablet.avif'),
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
@@ -171,7 +175,7 @@ class _Home_screenState extends State<Home_screen> {
                           ),
                         ),SizedBox(height: 10,),
                         Text(
-                          '𝐇𝐞𝐚𝐥𝐭𝐡𝐜𝐚𝐫𝐞',
+                          '𝐀𝐳𝐢𝐭𝐡𝐫𝐨𝐦𝐲𝐜𝐢𝐧',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -193,7 +197,7 @@ class _Home_screenState extends State<Home_screen> {
                             color: Colors.white,
                             image: DecorationImage(
                                 image: AssetImage(
-                                    'assets/istockphoto-1421629383-170667a.png'),
+                                    'assets/rabi.jpg'),
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
@@ -206,7 +210,7 @@ class _Home_screenState extends State<Home_screen> {
                           ),
                         ),SizedBox(height: 10,),
                         Text(
-                          '𝐇𝐞𝐚𝐥𝐭𝐡𝐜𝐚𝐫𝐞',
+                          '𝐑𝐚𝐛𝐢𝐩𝐫𝐨𝐬𝐨𝐥',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -228,7 +232,7 @@ class _Home_screenState extends State<Home_screen> {
                             color: Colors.white,
                             image: DecorationImage(
                                 image: AssetImage(
-                                    'assets/istockphoto-1421629383-170667a.png'),
+                                    'assets/Neopan Tablet,Mefenamic Acid 250mg,Paracetamol 500mg,price,uses,side Effects - Drugcarts.jpg'),
                                 fit: BoxFit.cover),
                             boxShadow: [
                               BoxShadow(
@@ -241,7 +245,7 @@ class _Home_screenState extends State<Home_screen> {
                           ),
                         ),SizedBox(height: 10,),
                         Text(
-                          '𝐇𝐞𝐚𝐥𝐭𝐡𝐜𝐚𝐫𝐞',
+                          '𝐍𝐞𝐨𝐩𝐚𝐧',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -267,7 +271,9 @@ class _Home_screenState extends State<Home_screen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Offer()));
+                      },
                       child: Container(
                         height: 50,
                         width: 130,
@@ -300,40 +306,42 @@ class _Home_screenState extends State<Home_screen> {
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        height: 50,
-                        width: 130,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              ),
-                            ],
-                            border: Border.all(width: 2),
-                            color: Colors.grey,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              '𝐏𝐫𝐞𝐦𝐢𝐮𝐦',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Icon(Icons.workspace_premium_outlined)
-                          ],
-                        ),
-                      ),
-                    )
+                    // GestureDetector(
+                    //   onTap: () {
+                    //      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Premium()));
+                    //   },
+                    //   child: Container(
+                    //     height: 50,
+                    //     width: 130,
+                    //     decoration: BoxDecoration(
+                    //         boxShadow: [
+                    //           BoxShadow(
+                    //             color: Colors.black.withOpacity(0.5),
+                    //             spreadRadius: 2,
+                    //             blurRadius: 5,
+                    //             offset: Offset(0, 3),
+                    //           ),
+                    //         ],
+                    //         border: Border.all(width: 2),
+                    //         color: Colors.grey,
+                    //         borderRadius:
+                    //             BorderRadius.all(Radius.circular(10))),
+                    //     child: Row(
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         Text(
+                    //           '𝐏𝐫𝐞𝐦𝐢𝐮𝐦',
+                    //           style: TextStyle(
+                    //               fontWeight: FontWeight.bold, fontSize: 20),
+                    //         ),
+                    //         SizedBox(
+                    //           width: 10,
+                    //         ),
+                    //         Icon(Icons.workspace_premium_outlined)
+                    //       ],
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               )
@@ -341,7 +349,7 @@ class _Home_screenState extends State<Home_screen> {
           ),
         ),
       ),
-      bottomNavigationBar: bottombar(context),
+     
     );
   }
 }

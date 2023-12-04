@@ -39,24 +39,24 @@ import 'package:health/tab.dart/shopping_screen.dart';
                     ],
                   ),
                 )),
-                PopupMenuItem(
-                    child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: IconButton(
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => cart()));
-                          },
-                          icon: Icon(Icons.favorite_border)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 5),
-                      child: Text('cart'),
-                    )
-                  ],
-                )),
+                // PopupMenuItem(
+                //     child: Row(
+                //   children: [
+                //     Padding(
+                //       padding: const EdgeInsets.only(left: 10),
+                //       child: IconButton(
+                //           onPressed: () {
+                //             Navigator.of(context).push(MaterialPageRoute(
+                //                 builder: (context) => cart()));
+                //           },
+                //           icon: Icon(Icons.favorite_border)),
+                //     ),
+                //     Padding(
+                //       padding: const EdgeInsets.only(left: 5),
+                //       child: Text('cart'),
+                //     )
+                //   ],
+                // )),
               ],
               child: Icon(Icons.more_vert),
             ),

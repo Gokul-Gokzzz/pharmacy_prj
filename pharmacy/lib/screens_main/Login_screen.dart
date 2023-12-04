@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:health/screens_main/home_screen.dart';
-import 'package:health/screens_main/product_screen.dart';
-import 'package:health/screens_main/setting_screen.dart';
+import 'package:health/tab.dart/bottom_bar.dart';
+
+
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -24,7 +24,7 @@ class _LoginpageState extends State<Loginpage> {
         ),
         child:Padding(
           padding: const EdgeInsets.only(top:60,left: 22 ),
-          child: Text('hello\nsign in!',style: TextStyle(
+          child: Text('𝐇𝐞𝐥𝐥𝐨\n𝐒𝐢𝐠𝐧 𝐈𝐧!',style: TextStyle(
             fontSize: 30,
             color: Colors.white,
             fontWeight: FontWeight.bold
@@ -90,11 +90,10 @@ class _LoginpageState extends State<Loginpage> {
                     ),
                     child: GestureDetector(
               onTap: (){
-                Navigator.push(context,
+                Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => 
-                    // Home_screen()
-                    // Setting()
-                    Product()
+                
+                    Home()
                     ));
               },
               child: Container(
