@@ -19,7 +19,7 @@ class _HealthState extends State<Health> {
         child: Image(
           image: AssetImage(
             'assets/360_F_462160280_W3ZVodLcVwj7BkiZs8RP1wR5LCClQAm9.jpg'),
-            height: MediaQuery.of(context).size.height*1,),
+        )
       )
     );
   }

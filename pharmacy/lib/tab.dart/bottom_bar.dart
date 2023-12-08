@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:health/screens_main/add_screen.dart';
 import 'package:health/screens_main/product_screen.dart';
 import 'package:health/tab.dart/home_screen.dart';
 import 'package:health/tab.dart/setting_screen.dart';
@@ -14,9 +15,11 @@ class Home extends StatefulWidget {
 int currentindex = 0;
 
 final List _tabs = [
-  Home_screen(),
+  HomeScreen(),
   Product(),
-  Setting()
+  Add(),
+  Setting(),
+  
 ];
 
 class _HomeState extends State<Home> {
@@ -46,6 +49,7 @@ class _HomeState extends State<Home> {
             tabs: const [
             GButton(icon: Icons.home_outlined,text: "Home",),
             GButton(icon: Icons.shopping_cart_checkout,text: "shop",), 
+            GButton(icon: Icons.add,text: "Add",), 
             GButton(icon: Icons.settings_outlined,text: "Settings",),
           ],),
         ),

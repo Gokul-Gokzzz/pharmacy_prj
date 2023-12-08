@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:health/screens_main/Login_screen.dart';
 import 'package:health/screens_main/account.dart';
 import 'package:health/screens_main/contact_us.dart';
 import 'package:health/screens_main/order.dart';
 import 'package:health/screens_main/privacy_policy.dart';
 import 'package:health/screens_main/terms_condition.dart';
 import 'package:health/tab.dart/widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class Setting extends StatefulWidget {
@@ -18,6 +20,14 @@ class _SettingState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(onPressed: (){
+            signout(context);
+          }, icon:Icon(Icons.exit_to_app)
+          )
+        ],
+      ),
       body: Stack(
         children: [
           
@@ -100,5 +110,12 @@ class _SettingState extends State<Setting> {
       )
     
     );
+  }
+
+
+  signout(BuildContext ctx)async{
+    final _sharedperfer = await SharedPreferences.getInstance();
+    await _sharedperfer.clear();
+    Navigator.of(ctx).pushAndRemoveUntil(MaterialPageRoute(builder: (ctx1)=>Loginpage()), (route) => false);
   }
 }

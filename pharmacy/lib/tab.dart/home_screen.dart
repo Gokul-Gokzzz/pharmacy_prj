@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:health/screens_main/health_care.dart';
+import 'package:health/screens_main/list_medicines.dart';
 import 'package:health/screens_main/offer_zone.dart';
 import 'package:health/screens_main/premium.dart';
 import 'package:health/screens_main/product_screen.dart';
@@ -12,14 +13,14 @@ import 'package:health/tab.dart/shopping_screen.dart';
 
 
 
-class Home_screen extends StatefulWidget {
-  const Home_screen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<Home_screen> createState() => _Home_screenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _Home_screenState extends State<Home_screen> {
+class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +28,9 @@ class _Home_screenState extends State<Home_screen> {
       appBar:appbar(),
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/ph3.png'), fit: BoxFit.cover)),
+                  image: AssetImage('assets/home.jpg'),fit: BoxFit.cover)),
           child: Column(
             children: [
              
@@ -42,19 +43,19 @@ class _Home_screenState extends State<Home_screen> {
                             borderRadius: BorderRadius.circular(20),
                             ),
                             hintText: '𝕾𝖊𝖆𝖗𝖈𝖍 𝖋𝖔𝖗 𝖒𝖊𝖉𝖎𝖈𝖎𝖓𝖊𝖘',
-                            suffixIcon: Icon(Icons.search),
+                            suffixIcon: const Icon(Icons.search),
                             
                             ),
                             ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 90),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Product()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Product()));
                       },
                       child: Column(
                         children: [
@@ -67,9 +68,9 @@ class _Home_screenState extends State<Home_screen> {
                                 width: 2,
                               ),
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20)),
+                                  const BorderRadius.all(Radius.circular(20)),
                               color: Colors.white,
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                   image: AssetImage('assets/medicines.png'),
                                   fit: BoxFit.cover),
                               boxShadow: [
@@ -77,12 +78,12 @@ class _Home_screenState extends State<Home_screen> {
                                   color: Colors.black.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 5,
-                                  offset: Offset(0, 3),
+                                  offset: const Offset(0, 3),
                                 ),
                               ],
                             ),
-                          ),SizedBox(height: 10,),
-                          Text(
+                          ),const SizedBox(height: 10,),
+                          const Text(
                             '𝐌𝐞𝐝𝐢𝐜𝐢𝐧𝐞',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
@@ -91,7 +92,7 @@ class _Home_screenState extends State<Home_screen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Health()));
+                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Health()));
                       },
                       child: Column(
                         children: [
@@ -104,9 +105,9 @@ class _Home_screenState extends State<Home_screen> {
                                 width: 2,
                               ),
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20)),
+                                  const BorderRadius.all(Radius.circular(20)),
                               color: Colors.white,
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                   image: AssetImage(
                                       'assets/istockphoto-1421629383-170667a.png'),
                                   fit: BoxFit.cover),
@@ -115,12 +116,12 @@ class _Home_screenState extends State<Home_screen> {
                                   color: Colors.black.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 5,
-                                  offset: Offset(0, 3),
+                                  offset: const Offset(0, 3),
                                 ),
                               ],
                             ),
-                          ),SizedBox(height: 10,),
-                          Text(
+                          ),const SizedBox(height: 10,),
+                          const Text(
                             '𝐇𝐞𝐚𝐥𝐭𝐡𝐜𝐚𝐫𝐞',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
@@ -130,140 +131,164 @@ class _Home_screenState extends State<Home_screen> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 200),
-                child: Text(
-                  '𝐅𝐫𝐞𝐪𝐮𝐞𝐧𝐭𝐥𝐲 𝐛𝐨𝐮𝐠𝐡𝐭',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const List_Of_Medicines()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                    boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                              border: Border.all(width: 2),
+                              color: Colors.grey,
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10))
+                  ),
+                    child: const Padding(
+                      padding: EdgeInsets.only(right: 20,left: 20),
+                      child: Text(
+                        '𝐅𝐫𝐞𝐪𝐮𝐞𝐧𝐭𝐥𝐲 𝐛𝐨𝐮𝐠𝐡𝐭',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 2,
-                            ),
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Colors.white,
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/azithromycin-500-tablet.avif'),
-                                fit: BoxFit.cover),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                        ),SizedBox(height: 10,),
-                        Text(
-                          '𝐀𝐳𝐢𝐭𝐡𝐫𝐨𝐦𝐲𝐜𝐢𝐧',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 2,
-                            ),
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Colors.white,
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/rabi.jpg'),
-                                fit: BoxFit.cover),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                        ),SizedBox(height: 10,),
-                        Text(
-                          '𝐑𝐚𝐛𝐢𝐩𝐫𝐨𝐬𝐨𝐥',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.grey,
-                              width: 2,
-                            ),
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Colors.white,
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/Neopan Tablet,Mefenamic Acid 250mg,Paracetamol 500mg,price,uses,side Effects - Drugcarts.jpg'),
-                                fit: BoxFit.cover),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                        ),SizedBox(height: 10,),
-                        Text(
-                          '𝐍𝐞𝐨𝐩𝐚𝐧',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     GestureDetector(
+              //       onTap: () {},
+              //       child: Column(
+              //         children: [
+              //           Container(
+              //             height: 100,
+              //             width: 100,
+              //             decoration: BoxDecoration(
+              //               border: Border.all(
+              //                 color: Colors.grey,
+              //                 width: 2,
+              //               ),
+              //               borderRadius: BorderRadius.all(Radius.circular(20)),
+              //               color: Colors.white,
+              //               image: DecorationImage(
+              //                   image: AssetImage(
+              //                       'assets/azithromycin-500-tablet.avif'),
+              //                   fit: BoxFit.cover),
+              //               boxShadow: [
+              //                 BoxShadow(
+              //                   color: Colors.black.withOpacity(0.5),
+              //                   spreadRadius: 2,
+              //                   blurRadius: 5,
+              //                   offset: Offset(0, 3),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),SizedBox(height: 10,),
+              //           Text(
+              //             '𝐀𝐳𝐢𝐭𝐡𝐫𝐨𝐦𝐲𝐜𝐢𝐧',
+              //             style: TextStyle(fontWeight: FontWeight.bold),
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //     GestureDetector(
+              //       onTap: () {},
+              //       child: Column(
+              //         children: [
+              //           Container(
+              //             height: 100,
+              //             width: 100,
+              //             decoration: BoxDecoration(
+              //               border: Border.all(
+              //                 color: Colors.grey,
+              //                 width: 2,
+              //               ),
+              //               borderRadius: BorderRadius.all(Radius.circular(20)),
+              //               color: Colors.white,
+              //               image: DecorationImage(
+              //                   image: AssetImage(
+              //                       'assets/rabi.jpg'),
+              //                   fit: BoxFit.cover),
+              //               boxShadow: [
+              //                 BoxShadow(
+              //                   color: Colors.black.withOpacity(0.5),
+              //                   spreadRadius: 2,
+              //                   blurRadius: 5,
+              //                   offset: Offset(0, 3),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),SizedBox(height: 10,),
+              //           Text(
+              //             '𝐑𝐚𝐛𝐢𝐩𝐫𝐨𝐬𝐨𝐥',
+              //             style: TextStyle(fontWeight: FontWeight.bold),
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //     GestureDetector(
+              //       onTap: () {},
+              //       child: Column(
+              //         children: [
+              //           Container(
+              //             height: 100,
+              //             width: 100,
+              //             decoration: BoxDecoration(
+              //               border: Border.all(
+              //                 color: Colors.grey,
+              //                 width: 2,
+              //               ),
+              //               borderRadius: BorderRadius.all(Radius.circular(20)),
+              //               color: Colors.white,
+              //               image: DecorationImage(
+              //                   image: AssetImage(
+              //                       'assets/Neopan Tablet,Mefenamic Acid 250mg,Paracetamol 500mg,price,uses,side Effects - Drugcarts.jpg'),
+              //                   fit: BoxFit.cover),
+              //               boxShadow: [
+              //                 BoxShadow(
+              //                   color: Colors.black.withOpacity(0.5),
+              //                   spreadRadius: 2,
+              //                   blurRadius: 5,
+              //                   offset: Offset(0, 3),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),SizedBox(height: 10,),
+              //           Text(
+              //             '𝐍𝐞𝐨𝐩𝐚𝐧',
+              //             style: TextStyle(fontWeight: FontWeight.bold),
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              const SizedBox(
                 height: 50,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 200),
+              const Padding(
+                padding: EdgeInsets.only(right: 200),
                 child: Text(
                   '𝐄𝐱𝐩𝐥𝐨𝐫𝐞 𝐚𝐬 𝐲𝐨𝐮 𝐥𝐢𝐤𝐞',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               SizedBox(
@@ -272,7 +297,7 @@ class _Home_screenState extends State<Home_screen> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Offer()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Offer()));
                       },
                       child: Container(
                         height: 50,
@@ -283,14 +308,14 @@ class _Home_screenState extends State<Home_screen> {
                                 color: Colors.black.withOpacity(0.5),
                                 spreadRadius: 2,
                                 blurRadius: 5,
-                                offset: Offset(0, 3),
+                                offset: const Offset(0, 3),
                               ),
                             ],
                             border: Border.all(width: 2),
                             color: Colors.grey,
                             borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
-                        child: Row(
+                                const BorderRadius.all(Radius.circular(10))),
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(

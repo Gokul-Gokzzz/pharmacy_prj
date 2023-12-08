@@ -14,16 +14,16 @@ class _DetailesState extends State<Detailes> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Detailes'),
+        title: const Text('Detailes'),
       ),
       body: Column(
         children: [
           WTextformFeild(context, label: 'Name', hint: 'Name'),
           WTextformFeild(context, label: 'Phone Number', hint: 'Phone Number'),
           WTextformFeild(context, label: 'Address', hint: 'Address'),
-SizedBox(height: 20,),
+const SizedBox(height: 20,),
           ElevatedButton(onPressed: (){},
-           child:Text('Save') 
+           child:const Text('Save') 
            )
         ],
       ),
