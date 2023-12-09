@@ -25,4 +25,3 @@ final String? image;
 
 Model({required this.name, required this.address, required this.Medicines, required this.age,this.index,this.image});
 }
-

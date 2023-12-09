@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:health/screens_main/health_care.dart';
 import 'package:health/screens_main/list_medicines.dart';
 import 'package:health/screens_main/offer_zone.dart';
-import 'package:health/screens_main/premium.dart';
+// import 'package:health/screens_main/premium.dart';
 import 'package:health/screens_main/product_screen.dart';
 import 'package:health/tab.dart/app_bar.dart';
-import 'package:health/tab.dart/bottom_bar.dart';
-import 'package:health/tab.dart/shopping_screen.dart';
+// import 'package:health/tab.dart/bottom_bar.dart';
+// import 'package:health/tab.dart/shopping_screen.dart';
 
 
 
@@ -168,116 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 50,
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: [
-              //     GestureDetector(
-              //       onTap: () {},
-              //       child: Column(
-              //         children: [
-              //           Container(
-              //             height: 100,
-              //             width: 100,
-              //             decoration: BoxDecoration(
-              //               border: Border.all(
-              //                 color: Colors.grey,
-              //                 width: 2,
-              //               ),
-              //               borderRadius: BorderRadius.all(Radius.circular(20)),
-              //               color: Colors.white,
-              //               image: DecorationImage(
-              //                   image: AssetImage(
-              //                       'assets/azithromycin-500-tablet.avif'),
-              //                   fit: BoxFit.cover),
-              //               boxShadow: [
-              //                 BoxShadow(
-              //                   color: Colors.black.withOpacity(0.5),
-              //                   spreadRadius: 2,
-              //                   blurRadius: 5,
-              //                   offset: Offset(0, 3),
-              //                 ),
-              //               ],
-              //             ),
-              //           ),SizedBox(height: 10,),
-              //           Text(
-              //             '𝐀𝐳𝐢𝐭𝐡𝐫𝐨𝐦𝐲𝐜𝐢𝐧',
-              //             style: TextStyle(fontWeight: FontWeight.bold),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //     GestureDetector(
-              //       onTap: () {},
-              //       child: Column(
-              //         children: [
-              //           Container(
-              //             height: 100,
-              //             width: 100,
-              //             decoration: BoxDecoration(
-              //               border: Border.all(
-              //                 color: Colors.grey,
-              //                 width: 2,
-              //               ),
-              //               borderRadius: BorderRadius.all(Radius.circular(20)),
-              //               color: Colors.white,
-              //               image: DecorationImage(
-              //                   image: AssetImage(
-              //                       'assets/rabi.jpg'),
-              //                   fit: BoxFit.cover),
-              //               boxShadow: [
-              //                 BoxShadow(
-              //                   color: Colors.black.withOpacity(0.5),
-              //                   spreadRadius: 2,
-              //                   blurRadius: 5,
-              //                   offset: Offset(0, 3),
-              //                 ),
-              //               ],
-              //             ),
-              //           ),SizedBox(height: 10,),
-              //           Text(
-              //             '𝐑𝐚𝐛𝐢𝐩𝐫𝐨𝐬𝐨𝐥',
-              //             style: TextStyle(fontWeight: FontWeight.bold),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //     GestureDetector(
-              //       onTap: () {},
-              //       child: Column(
-              //         children: [
-              //           Container(
-              //             height: 100,
-              //             width: 100,
-              //             decoration: BoxDecoration(
-              //               border: Border.all(
-              //                 color: Colors.grey,
-              //                 width: 2,
-              //               ),
-              //               borderRadius: BorderRadius.all(Radius.circular(20)),
-              //               color: Colors.white,
-              //               image: DecorationImage(
-              //                   image: AssetImage(
-              //                       'assets/Neopan Tablet,Mefenamic Acid 250mg,Paracetamol 500mg,price,uses,side Effects - Drugcarts.jpg'),
-              //                   fit: BoxFit.cover),
-              //               boxShadow: [
-              //                 BoxShadow(
-              //                   color: Colors.black.withOpacity(0.5),
-              //                   spreadRadius: 2,
-              //                   blurRadius: 5,
-              //                   offset: Offset(0, 3),
-              //                 ),
-              //               ],
-              //             ),
-              //           ),SizedBox(height: 10,),
-              //           Text(
-              //             '𝐍𝐞𝐨𝐩𝐚𝐧',
-              //             style: TextStyle(fontWeight: FontWeight.bold),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //   ],
-              // ),
+             
               const SizedBox(
                 height: 50,
               ),
@@ -331,42 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    // GestureDetector(
-                    //   onTap: () {
-                    //      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Premium()));
-                    //   },
-                    //   child: Container(
-                    //     height: 50,
-                    //     width: 130,
-                    //     decoration: BoxDecoration(
-                    //         boxShadow: [
-                    //           BoxShadow(
-                    //             color: Colors.black.withOpacity(0.5),
-                    //             spreadRadius: 2,
-                    //             blurRadius: 5,
-                    //             offset: Offset(0, 3),
-                    //           ),
-                    //         ],
-                    //         border: Border.all(width: 2),
-                    //         color: Colors.grey,
-                    //         borderRadius:
-                    //             BorderRadius.all(Radius.circular(10))),
-                    //     child: Row(
-                    //       mainAxisAlignment: MainAxisAlignment.center,
-                    //       children: [
-                    //         Text(
-                    //           '𝐏𝐫𝐞𝐦𝐢𝐮𝐦',
-                    //           style: TextStyle(
-                    //               fontWeight: FontWeight.bold, fontSize: 20),
-                    //         ),
-                    //         SizedBox(
-                    //           width: 10,
-                    //         ),
-                    //         Icon(Icons.workspace_premium_outlined)
-                    //       ],
-                    //     ),
-                    //   ),
-                    // )
+                   
                   ],
                 ),
               )

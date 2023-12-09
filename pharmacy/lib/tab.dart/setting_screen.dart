@@ -64,11 +64,11 @@ class _SettingState extends State<Setting> {
        ),
        child: Column(
         children: [
-          set(
-            icon:IconButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Account()));
-            }, icon: Icon(Icons.person)),
-            text: Text('𝐀𝐜𝐜𝐨𝐮𝐧𝐭')),
+          // set(
+          //   icon:IconButton(onPressed: (){
+          //     Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Account()));
+          //   }, icon: Icon(Icons.person)),
+          //   text: Text('𝐀𝐜𝐜𝐨𝐮𝐧𝐭')),
           set(
             icon: IconButton(onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Order()));

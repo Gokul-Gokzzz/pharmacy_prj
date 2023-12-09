@@ -24,8 +24,8 @@ import 'package:health/tab.dart/shopping_screen.dart';
                 PopupMenuItem(
                     child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) => const bag()));
+                    // Navigator.of(context)
+                    //     .push(MaterialPageRoute(builder: (context) => const bag()));
                   },
                   child: const Row(
                     children: [
