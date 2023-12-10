@@ -78,7 +78,7 @@ class _LoginpageState extends State<Loginpage> {
                     ),
                      TextFormField(
                       controller: _PasswordController,
-                      keyboardType: TextInputType.visiblePassword,
+                      
                         decoration: const InputDecoration(
                         suffixIcon: Icon(Icons.visibility_off,color:Colors.grey ,),
                         label: Text('Password',style:TextStyle(
