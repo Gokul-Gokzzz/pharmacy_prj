@@ -3,6 +3,7 @@ import 'package:health/model/model_cart.dart';
 import 'package:hive/hive.dart';
 
 ValueNotifier<List<CartList>> cartListNotifier =ValueNotifier([]);
+List<CartList> cartitems = [];
  Future<void> addCart(CartList value)async{
    final cartDB = await Hive.openBox<CartList>('cart_db');
    

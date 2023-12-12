@@ -19,16 +19,17 @@ class CartListAdapter extends TypeAdapter<CartList> {
     return CartList(
       data: fields[1] as String,
       amount: fields[2] as String,
-      select: fields[3] as String,
+      select: fields[3] as int,
       index: fields[0] as int?,
-      image: fields[4] as String?,
+      image: fields[4] as dynamic,
+      count: fields[5] as int?,
     );
   }
 
   @override
   void write(BinaryWriter writer, CartList obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.index)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class CartListAdapter extends TypeAdapter<CartList> {
       ..writeByte(3)
       ..write(obj.select)
       ..writeByte(4)
-      ..write(obj.image);
+      ..write(obj.image)
+      ..writeByte(5)
+      ..write(obj.count);
   }
 
   @override

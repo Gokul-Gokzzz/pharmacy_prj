@@ -15,11 +15,15 @@ final String data ;
 final String amount;
 
 @HiveField(3)
-final String select;
+final int  select;
 
 
 @HiveField(4)
-final String? image;
+final dynamic image;
 
-CartList({required this.data, required this.amount, required this.select,this.index,this.image});
+@HiveField(5)
+late final int? count;
+
+
+CartList( {required this.data, required this.amount, required this.select,this.index,this.image, this.count});
 }

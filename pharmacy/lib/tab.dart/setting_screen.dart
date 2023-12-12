@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health/screens_main/Login_screen.dart';
-import 'package:health/screens_main/account.dart';
+import 'package:health/screens_main/about.dart';
 import 'package:health/screens_main/contact_us.dart';
 import 'package:health/screens_main/order.dart';
 import 'package:health/screens_main/privacy_policy.dart';
@@ -21,6 +21,19 @@ class _SettingState extends State<Setting> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+         flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.blue,
+                Colors.blueGrey,
+              ],
+            ),
+          ),
+        ),
+         title: const Text('𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬'),
         actions: [
           IconButton(onPressed: (){
             signout(context);
@@ -42,12 +55,9 @@ class _SettingState extends State<Setting> {
         height: double.infinity,
         width: double.infinity,
         decoration:const BoxDecoration(
-          // image: DecorationImage(image: AssetImage('assets/ph1.jpg'),fit: BoxFit.cover)
+          image: DecorationImage(image: AssetImage('assets/doct1.jpg'),fit: BoxFit.cover)
         ),
-        // child:Padding(
-        //   padding: const EdgeInsets.only(top:60,left: 22 ),
-         
-        // ) ,
+
 
       ),
       Padding(
@@ -60,20 +70,20 @@ class _SettingState extends State<Setting> {
           topLeft: Radius.circular(40),
           topRight: Radius.circular(40)
         ),
-           image: DecorationImage(image: AssetImage('assets/wp.png'),fit: BoxFit.cover)
+           image: DecorationImage(image: AssetImage('assets/doct.jpg'),fit: BoxFit.cover)
        ),
        child: Column(
         children: [
           set(
             icon:IconButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Account()));
-            }, icon: Icon(Icons.person)),
-            text: Text('𝐀𝐜𝐜𝐨𝐮𝐧𝐭')),
-          set(
-            icon: IconButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Order()));
-            }, icon: Icon(Icons.shopping_cart_checkout)),
-            text: Text('𝐘𝐨𝐮𝐫 𝐨𝐫𝐝𝐞𝐫')),
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> About()));
+            }, icon: Icon(Icons.app_registration_rounded)),
+            text: Text('𝐀𝐛𝐨𝐮𝐭 𝐀𝐩𝐩')),
+          // set(
+          //   icon: IconButton(onPressed: (){
+          //     Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Order()));
+          //   }, icon: Icon(Icons.shopping_cart_checkout)),
+          //   text: Text('𝐘𝐨𝐮𝐫 𝐨𝐫𝐝𝐞𝐫')),
           set(icon:
            IconButton(onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Privacy_Policy()));
