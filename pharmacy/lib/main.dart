@@ -11,12 +11,11 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   
-  // Registering the ModelAdapter
+  
   if (!Hive.isAdapterRegistered(ModelAdapter().typeId)) {
     Hive.registerAdapter(ModelAdapter());
   }
 
-  // Registering the CartListAdapter
   if (!Hive.isAdapterRegistered(CartListAdapter().typeId)) {
     Hive.registerAdapter(CartListAdapter());
   }

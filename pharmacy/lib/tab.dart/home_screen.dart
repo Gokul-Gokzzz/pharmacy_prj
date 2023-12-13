@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/home.jpg'),fit: BoxFit.cover)),
+                  image: AssetImage('assets/bg1.jpg'),fit: BoxFit.cover)),
           child: Column(
             children: [
              

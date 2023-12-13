@@ -110,3 +110,31 @@ Widget Healthcare() {
     ],
   );
 }
+
+
+
+  Widget _buildFeature(String title, String description) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: RichText(
+        text: TextSpan(
+          style: TextStyle(fontSize: 16.0, color: Colors.black),
+          children: [
+            TextSpan(
+              text: '$title\n',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(text: description),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContactInfo(String info) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 4.0),
+      child: Text(info, style: TextStyle(fontSize: 16.0)),
+    );
+  }
+
