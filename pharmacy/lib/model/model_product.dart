@@ -1,9 +1,9 @@
 import 'package:hive/hive.dart';
 
-part 'model_cart.g.dart';
+part 'model_product.g.dart';
 
-@HiveType(typeId: 2)
-class CartItem {
+@HiveType(typeId: 3)
+class Product {
   @HiveField(0)
   int? index;
 
@@ -13,5 +13,5 @@ class CartItem {
   @HiveField(2)
   final double price;
 
-  CartItem({required this.name, required this.price, this.index});
+  Product({required this.name, required this.price, this.index});
 }

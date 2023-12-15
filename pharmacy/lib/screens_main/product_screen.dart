@@ -333,28 +333,13 @@
 // }
 
 
-// product_screen.dart
 import 'package:flutter/material.dart';
-// import 'package:health/functions/function_cart.dart';
-// import 'package:health/model/model_cart.dart';
+import 'package:health/functions/function_cart.dart';
+import 'package:health/model/model_cart.dart';
+import 'package:health/model/model_product.dart';
+import 'package:health/tab.dart/class.dart';
 import 'package:health/tab.dart/shopping_screen.dart';
-// import 'package:health/tab.dart/class.dart'; // Make sure to replace this with the correct import path
 import 'package:hive/hive.dart';
-
-class CartItem {
-  final Product product;
-  int quantity;
-
-  CartItem({required this.product, required this.quantity});
-}
-
-
-class Product {
-  final String name;
-  final double price;
-
-  Product({required this.name, required this.price});
-}
 
 class ProductPage extends StatelessWidget {
   final List<Product> products = [
@@ -370,11 +355,11 @@ class ProductPage extends StatelessWidget {
         title: Text('Product Page'),
         actions: [
           IconButton(
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage()));
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));
             },
-           icon: Icon(Icons.shopping_bag_outlined)
-           )
+            icon: Icon(Icons.shopping_bag_outlined),
+          )
         ],
       ),
       body: ListView.builder(
@@ -416,8 +401,8 @@ class ProductPage extends StatelessWidget {
               child: Text('Cancel'),
             ),
             TextButton(
-              onPressed: () {
-                addCartItem(product, quantity);
+              onPressed: () async {
+                addCartItem();
                 Navigator.of(context).pop();
               },
               child: Text('Add'),
@@ -427,15 +412,10 @@ class ProductPage extends StatelessWidget {
       },
     );
   }
-
-void addCartItem(Product product, int quantity) async {
-  final cartBox = await Hive.openBox<CartItem>('cart_db');
-  final cartItem = CartItem(product: product, quantity: quantity);
-  cartBox.add(cartItem);
+  
+  void addCartItem() {}
 }
 
-
-}
 
 
 
