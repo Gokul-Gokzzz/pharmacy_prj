@@ -194,72 +194,140 @@
 // }
 
 
+// import 'package:flutter/material.dart';
+// import 'package:hive/hive.dart';
+// import 'package:health/functions/function_cart.dart';
+// import 'package:health/model/model_cart.dart';
+
+// class CartScreen extends StatefulWidget {
+//   @override
+//   _CartScreenState createState() => _CartScreenState();
+// }
+
+// class _CartScreenState extends State<CartScreen> {
+//   late Box<CartList> cartBox;
+//   late List<CartList> cartItems;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     cartBox = Hive.box<CartList>('cartBox');
+//     cartItems = cartBox.values.toList();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Cart'),
+//       ),
+//       body: ListView.builder(
+//         itemBuilder: (ctx, index) {
+//           return Padding(
+//             padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
+//             child: Card(
+//               color: Colors.white,
+//               elevation: 10,
+//               shape: RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.circular(30),
+//               ),
+//               child: ListTile(
+//                 title: Text(cartItems[index].data),
+//                 subtitle: Text(cartItems[index].amount),
+//                 leading: CircleAvatar(
+//                   backgroundImage: AssetImage(cartItems[index].image),
+//                 ),
+//                 trailing: ElevatedButton(
+//                   style: ButtonStyle(
+//                     overlayColor: MaterialStateProperty.all(Colors.amber),
+//                   ),
+//                   onPressed: () {
+//                     removeCartItem(cartItems[index]);
+//                     ScaffoldMessenger.of(context).showSnackBar(
+//                       SnackBar(
+//                         content: Text('Item deleted from cart'),
+//                         duration: Duration(seconds: 2),
+//                       ),
+//                     );
+//                   },
+//                   child: const Text('Delete'),
+//                 ),
+//               ),
+//             ),
+//           );
+//         },
+//         itemCount: cartItems.length,
+//       ),
+//     );
+//   }
+// }
+
+
+// CartPage.dart
+import 'dart:developer';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:health/functions/function_cart.dart';
 import 'package:health/model/model_cart.dart';
+import 'package:health/tab.dart/class.dart'; // Import your CartItem class
+import 'package:health/functions/functions.dart'; // Import your functions
 
-class CartScreen extends StatelessWidget {
-  List<String>? name;
-  List<String>? amount;
-  List<String>? image;
-  bool? isClicked;
-   CartScreen({super.key, this.isClicked,this.name,this.amount,this.image});
+class Cartpd {
+  final Product product;
+  int quantity;
 
+  Cartpd({required this.product, required this.quantity});
+}
+
+
+
+class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-          itemBuilder: (ctx, index) {
-            if(isClicked==true){
-              Padding(
-              padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
-              child: Card(
-                color: Colors.white,
-                elevation: 10,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: ListTile(
-                  title: Text(name![index]),
-                  subtitle: Text(amount![index]),
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage(image![index]),
-                  ),
-                  trailing: ElevatedButton(
-                    style: ButtonStyle(
-                      overlayColor:MaterialStatePropertyAll(Colors.amber)
-                    ),
-                    onPressed: () {
-                        CartList cartItem = CartList(
-                        count: index,
-                        data: name![index],
-                        amount: amount![index],
-                        select: index,
-                        image: image![index],
-                      );
-                      addCart(cartItem);
-                      
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cart Page'),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ValueListenableBuilder<List<CartList>>(
+              valueListenable: cartListNotifier,
+              builder: (context, cartItems, _) {
+                return ListView.builder(
+                  itemCount: cartItems.length,
+                  
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(cartItems[index].product.name),
+                      subtitle: Text('\$${cartItems[index].product.price.toString()}'),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text('Quantity: ${cartItems[index].quantity}'),
+                          IconButton(
+                            icon: Icon(Icons.delete),
+                            onPressed: () {
+                              deleteCartItem(index);
+                            },
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Item added to cart'),
-                          duration: Duration(seconds: 2),
-                        ),
-                      );
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => CartScreen(isClicked: isClicked,)),
-                      );
-                    },
-                    child: const Text('𝐀𝐝𝐝 𝐭𝐨 𝐜𝐚𝐫𝐭'),
-                  ),
-                ),
-              ),
-            );
-            }
-            
-          },
-          itemCount: name!.length,
-        );
+  void deleteCartItem(int index) {
+    deletecart(index);
   }
 }
+
 

@@ -17,17 +17,21 @@ class CartList {
   final int select;
 
   @HiveField(4)
-  final dynamic image;
+  final String image;
 
   @HiveField(5)
   late final int? count;
+
+  // @HiveField(6)
+  // bool isAddedToCart;
 
   CartList({
     required this.data,
     required this.amount,
     required this.select,
+    // required this.isAddedToCart,
     this.index,
-    this.image,
+    required this.image,
     this.count,
   });
 }

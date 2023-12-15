@@ -1,15 +1,9 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:health/screens_main/health_care.dart';
 import 'package:health/screens_main/list_medicines.dart';
 import 'package:health/screens_main/offer_zone.dart';
-// import 'package:health/screens_main/premium.dart';
 import 'package:health/screens_main/product_screen.dart';
 import 'package:health/tab.dart/app_bar.dart';
-// import 'package:health/tab.dart/bottom_bar.dart';
-// import 'package:health/tab.dart/shopping_screen.dart';
 
 
 
@@ -55,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Product()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ProductPage()));
                       },
                       child: Column(
                         children: [

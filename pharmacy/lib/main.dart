@@ -10,12 +10,12 @@ const SAVE_KEY_NAME = 'UserLogin';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  
-  
   if (!Hive.isAdapterRegistered(ModelAdapter().typeId)) {
     Hive.registerAdapter(ModelAdapter());
   }
 
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
   if (!Hive.isAdapterRegistered(CartListAdapter().typeId)) {
     Hive.registerAdapter(CartListAdapter());
   }

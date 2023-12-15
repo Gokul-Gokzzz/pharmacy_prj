@@ -21,7 +21,7 @@ class CartListAdapter extends TypeAdapter<CartList> {
       amount: fields[2] as String,
       select: fields[3] as int,
       index: fields[0] as int?,
-      image: fields[4] as dynamic,
+      image: fields[4] as String,
       count: fields[5] as int?,
     );
   }

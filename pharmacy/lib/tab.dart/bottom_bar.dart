@@ -16,7 +16,7 @@ int currentindex = 0;
 
 final List _tabs = [
   HomeScreen(),
-  Product(),
+  ProductPage(),
   Add(),
   Setting(),
   
