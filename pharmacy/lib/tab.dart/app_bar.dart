@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:health/tab.dart/cart_screen.dart';
-// import 'package:health/tab.dart/shopping_screen.dart';
+import 'package:health/model/model_cart.dart';
+import 'package:health/tab.dart/shopping_screen.dart';
+
 
  appbar(){
   return AppBar(
@@ -24,8 +25,8 @@ import 'package:flutter/material.dart';
                 PopupMenuItem(
                     child: GestureDetector(
                   onTap: () {
-                    // Navigator.of(context)
-                    //     .push(MaterialPageRoute(builder: (context) => const bag()));
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) =>  CartPage()));
                   },
                   child: const Row(
                     children: [
@@ -34,29 +35,12 @@ import 'package:flutter/material.dart';
                           child: Icon(Icons.shopping_bag_outlined)),
                       Padding(
                         padding: EdgeInsets.only(left: 5),
-                        child: Text('bag'),
+                        child: Text('Cart'),
                       )
                     ],
                   ),
                 )),
-                // PopupMenuItem(
-                //     child: Row(
-                //   children: [
-                //     Padding(
-                //       padding: const EdgeInsets.only(left: 10),
-                //       child: IconButton(
-                //           onPressed: () {
-                //             Navigator.of(context).push(MaterialPageRoute(
-                //                 builder: (context) => cart()));
-                //           },
-                //           icon: Icon(Icons.favorite_border)),
-                //     ),
-                //     Padding(
-                //       padding: const EdgeInsets.only(left: 5),
-                //       child: Text('cart'),
-                //     )
-                //   ],
-                // )),
+                
               ],
               child: const Icon(Icons.more_vert),
             ),

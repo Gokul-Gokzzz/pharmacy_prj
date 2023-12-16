@@ -7,15 +7,20 @@ class Contact extends StatelessWidget {
       appBar: AppBar(
         title: Text('Contact Us'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildContactInfo('Email', 'support@GkPharma.com'),
-            _buildContactInfo('Phone', '+91 9065559384'),
-            _buildContactForm(context),
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/logo back.jpg'),fit: BoxFit.cover)
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildContactInfo('Email', 'support@GkPharma.com'),
+              _buildContactInfo('Phone', '+91 9065559384'),
+              _buildContactForm(context),
+            ],
+          ),
         ),
       ),
     );
@@ -80,12 +85,12 @@ class Contact extends StatelessWidget {
           actions: [
             ElevatedButton(
               onPressed: () {
-                // Process the form data here (send email, store in database, etc.)
+                
                 print('Name: ${nameController.text}');
                 print('Email: ${emailController.text}');
                 print('Message: ${messageController.text}');
 
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop(); 
               },
               child: Text('Submit'),
             ),

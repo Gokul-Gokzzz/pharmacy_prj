@@ -14,8 +14,8 @@ class TermsAndCondition extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ListView(
-            children: [
-              const Text(
+            children: const [
+              Text(
                 '''
               Welcome to 𝐆𝐊 𝐏𝐇𝐀𝐑𝐌𝐀!
       

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:health/main.dart';
 import 'package:health/screens_main/welcome_screen.dart';
 import 'package:health/tab.dart/bottom_bar.dart';
-// import 'package:health/tab.dart/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ScreenSplash extends StatefulWidget {

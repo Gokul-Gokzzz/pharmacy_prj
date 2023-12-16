@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:health/screens_main/Login_screen.dart';
 import 'package:health/screens_main/about.dart';
 import 'package:health/screens_main/contact_us.dart';
-import 'package:health/screens_main/order.dart';
 import 'package:health/screens_main/privacy_policy.dart';
 import 'package:health/screens_main/terms_condition.dart';
 import 'package:health/tab.dart/widget.dart';
@@ -79,26 +78,13 @@ class _SettingState extends State<Setting> {
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> About()));
             }, icon: Icon(Icons.app_registration_rounded)),
             text: Text('𝐀𝐛𝐨𝐮𝐭 𝐀𝐩𝐩')),
-          // set(
-          //   icon: IconButton(onPressed: (){
-          //     Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Order()));
-          //   }, icon: Icon(Icons.shopping_cart_checkout)),
-          //   text: Text('𝐘𝐨𝐮𝐫 𝐨𝐫𝐝𝐞𝐫')),
+       
           set(icon:
            IconButton(onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Privacy()));
             }, 
             icon: Icon(Icons.shopping_cart_checkout)),text: Text('𝐏𝐫𝐢𝐯𝐚𝐜𝐲')),
-          // set(
-          //   icon: IconButton(onPressed: (){
-          //     Navigator.of(context).push(MaterialPageRoute(builder: (context)=> bag()));
-          //   }, icon: Icon(Icons.shopping_cart_checkout)),
-          //   text: Text('𝐏𝐚𝐲𝐦𝐞𝐧𝐭 𝐦𝐞𝐭𝐡𝐨𝐝')),
-          // set
-          // (icon: IconButton(onPressed: (){
-          //     Navigator.of(context).push(MaterialPageRoute(builder: (context)=> bag()));
-          //   }, icon: Icon(Icons.shopping_cart_checkout)),
-          // text: Text('𝐘𝐨𝐮𝐫 𝐜𝐨𝐮𝐩𝐨𝐧𝐬')),
+      
           set
           (icon:IconButton(onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Contact()));

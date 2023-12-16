@@ -5,10 +5,10 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('About Us'),
+        title: const Text('About Us'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/logo back.jpg'),fit: BoxFit.cover)
         ),
         child: Padding(
@@ -21,40 +21,40 @@ class About extends StatelessWidget {
                 height: 100,
                 width: 100,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
         
-              Text(
+              const Text(
                 '𝐆𝐊 𝐏𝐇𝐀𝐑𝐌𝐀',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 'Empowering Health and Wellness',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
         
              
-              Text(
+              const Text(
                 'Our Mission',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 'To provide accessible and quality healthcare solutions to everyone, everywhere.',
                 style: TextStyle(fontSize: 16),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
         
              
-              Text(
+              const Text(
                 'Key Features',
                 style: TextStyle(
                   fontSize: 20,
@@ -70,17 +70,17 @@ class About extends StatelessWidget {
           
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
         
          
-              Text(
+              const Text(
                 'About Us',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 '𝐆𝐊 𝐏𝐇𝐀𝐑𝐌𝐀 is developed by 𝐆𝐤 𝐢𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐯𝐞𝐬 Company, a dedicated team passionate about revolutionizing healthcare through innovative technology.',
                 style: TextStyle(fontSize: 16),
               ),
@@ -96,11 +96,11 @@ class About extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         children: [
-          Icon(
+          const Icon(
             Icons.check_circle,
             color: Colors.green,
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Text(featureText),
         ],
       ),
