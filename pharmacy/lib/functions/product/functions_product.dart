@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:health/model/model_product.dart';
+import 'package:health/model/fixed_product/model_product.dart';
 
 ValueNotifier<List<Product>> ProductListNotifier =
     ValueNotifier<List<Product>>([]);

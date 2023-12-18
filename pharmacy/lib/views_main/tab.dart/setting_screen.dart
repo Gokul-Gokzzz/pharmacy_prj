@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:health/screens_main/Login_screen.dart';
-import 'package:health/screens_main/about.dart';
-import 'package:health/screens_main/contact_us.dart';
-import 'package:health/screens_main/privacy_policy.dart';
-import 'package:health/screens_main/terms_condition.dart';
-import 'package:health/tab.dart/widget.dart';
+import 'package:health/views_main/Login_screen.dart';
+import 'package:health/views_main/about.dart';
+import 'package:health/views_main/contact_us.dart';
+import 'package:health/views_main/privacy_policy.dart';
+import 'package:health/views_main/terms_condition.dart';
+import 'package:health/widget/widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 

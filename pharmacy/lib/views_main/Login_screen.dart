@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:health/main.dart';
-import 'package:health/tab.dart/bottom_bar.dart';
+import 'package:health/views_main/tab.dart/widget/bottom_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -34,7 +34,7 @@ class _LoginpageState extends State<Loginpage> {
           ),
           child:const Padding(
             padding: EdgeInsets.only(top:60,left: 22 ),
-            child: Text('𝐇𝐞𝐥𝐥𝐨\n𝐒𝐢𝐠𝐧 𝐈𝐧!',style: TextStyle(
+            child: Text('𝐆𝐤 𝐏𝐡𝐚𝐫𝐦𝐚',style: TextStyle(
               fontSize: 30,
               color: Colors.white,
               fontWeight: FontWeight.bold

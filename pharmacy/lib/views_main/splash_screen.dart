@@ -3,8 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:health/main.dart';
-import 'package:health/screens_main/welcome_screen.dart';
-import 'package:health/tab.dart/bottom_bar.dart';
+import 'package:health/views_main/welcome_screen.dart';
+import 'package:health/views_main/tab.dart/widget/bottom_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ScreenSplash extends StatefulWidget {
@@ -23,8 +23,9 @@ class _ScreenSplashState extends State<ScreenSplash> {
   }
 
 
-Widget build(BuildContext context) {
-    return Scaffold(
+@override
+  Widget build(BuildContext context) {
+    return const Scaffold(
       body: Center(child: SizedBox(
         height: double.infinity,
         width: double.infinity,

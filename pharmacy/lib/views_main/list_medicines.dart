@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:health/functions/functions.dart';
-import 'package:health/model/model.dart';
-import 'package:health/screens_main/edit.dart';
-import 'package:health/screens_main/view.dart';
+import 'package:health/functions/medi/functions.dart';
+import 'package:health/model/mannual/model.dart';
+import 'package:health/views_main/edit.dart';
+import 'package:health/views_main/view.dart';
 
 class List_Of_Medicines extends StatefulWidget {
   const List_Of_Medicines({super.key});

@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:health/screens_main/list_medicines.dart';
+import 'package:health/views_main/list_medicines.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:health/functions/functions.dart';
-import 'package:health/model/model.dart';
+import 'package:health/functions/medi/functions.dart';
+import 'package:health/model/mannual/model.dart';
 
 class Add extends StatefulWidget {
   const Add({Key? key}) : super(key: key);
@@ -254,13 +254,13 @@ class _AddState extends State<Add> {
     }
     print('$_name $_address $_medicine $_age');
 
-    final _student = Model(
+    final _medicals = Model(
         name: _name,
         age: _age,
         Medicines: _medicine,
         address: _address,
         image: _selectedImage!.path);
-    add(_student);
+    add(_medicals);
     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>List_Of_Medicines()));
   }
 
@@ -276,18 +276,18 @@ class _AddState extends State<Add> {
     });
   }
 
-  void _refreshScreen() {
-    _nameController.clear();
-    _addressController.clear();
-    _medicinesController.clear();
-    _ageController.clear();
+  // void _refreshScreen() {
+  //   _nameController.clear();
+  //   _addressController.clear();
+  //   _medicinesController.clear();
+  //   _ageController.clear();
 
-    // --------------------------
-    setState(() {
-      _selectedImage = null;
-    });
-    // -----------------------------
-  }
+  //   // --------------------------
+  //   setState(() {
+  //     _selectedImage = null;
+  //   });
+  //   // -----------------------------
+  // }
 
 
 }

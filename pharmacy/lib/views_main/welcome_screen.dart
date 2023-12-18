@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health/screens_main/Login_screen.dart';
+import 'package:health/views_main/Login_screen.dart';
 
 
 class Welcome extends StatefulWidget {
@@ -29,7 +29,7 @@ class _WelcomeState extends State<Welcome> {
            const SizedBox(
              height: 100,
            ),
-           const Text('Welcome Back',style: TextStyle(
+           const Text('Welcome ',style: TextStyle(
              fontSize: 30,
              fontWeight: FontWeight.bold,
              color: Colors.white

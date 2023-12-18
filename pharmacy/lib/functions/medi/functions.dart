@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health/model/model.dart';
-import 'package:health/model/model_cart.dart';
+import 'package:health/model/mannual/model.dart';
+import 'package:health/model/fixed_cart/model_cart.dart';
 import 'package:hive/hive.dart';
 
 ValueNotifier<List<Model>> MedNotifier = ValueNotifier([]);

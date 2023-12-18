@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health/model/model_cart.dart';
-import 'package:health/tab.dart/shopping_screen.dart';
+import 'package:health/model/fixed_cart/model_cart.dart';
+import 'package:health/views_main/tab.dart/shopping_screen.dart';
 
 
  appbar(){
@@ -26,7 +26,7 @@ import 'package:health/tab.dart/shopping_screen.dart';
                     child: GestureDetector(
                   onTap: () {
                     Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) =>  CartPage()));
+                        .push(MaterialPageRoute(builder: (context) =>  QuantityPage()));
                   },
                   child: const Row(
                     children: [

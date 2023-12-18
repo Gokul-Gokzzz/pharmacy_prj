@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:health/functions/functions.dart';
-import 'package:health/model/model.dart';
-import 'package:health/screens_main/list_medicines.dart';
+import 'package:health/functions/medi/functions.dart';
+import 'package:health/model/mannual/model.dart';
+import 'package:health/views_main/list_medicines.dart';
 
 import 'package:image_picker/image_picker.dart';
 
@@ -25,10 +25,10 @@ class Edit extends StatefulWidget {
   });
 
   @override
-  State<Edit> createState() => _edit_studentState();
+  State<Edit> createState() => _editState();
 }
 
-class _edit_studentState extends State<Edit> {
+class _editState extends State<Edit> {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _addressController = TextEditingController();
   TextEditingController _medicinesController = TextEditingController();

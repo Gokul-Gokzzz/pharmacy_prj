@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:health/screens_main/add_screen.dart';
-import 'package:health/screens_main/product_screen.dart';
-import 'package:health/tab.dart/home_screen.dart';
-import 'package:health/tab.dart/setting_screen.dart';
+import 'package:health/views_main/add_screen.dart';
+import 'package:health/views_main/product_screen.dart';
+import 'package:health/views_main/tab.dart/home_screen.dart';
+import 'package:health/views_main/tab.dart/setting_screen.dart';
 
 
 class Home extends StatefulWidget {
@@ -16,7 +16,7 @@ int currentindex = 0;
 
 final List _tabs = [
   HomeScreen(),
-  ProductPage(),
+  product(),
   Add(),
   Setting(),
   
