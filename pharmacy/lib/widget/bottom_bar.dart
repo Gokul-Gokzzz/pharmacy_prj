@@ -15,10 +15,10 @@ class Home extends StatefulWidget {
 int currentindex = 0;
 
 final List _tabs = [
-  HomeScreen(),
-  product(),
-  Add(),
-  Setting(),
+  const HomeScreen(),
+  const Product(),
+  const Add(),
+  const Setting(),
   
 ];
 

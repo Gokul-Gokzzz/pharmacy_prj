@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Contact extends StatelessWidget {
+  const Contact({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contact Us'),
+        title: const Text('Contact Us'),
       ),
+
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/logo back.jpg'),fit: BoxFit.cover)
@@ -31,11 +34,11 @@ class Contact extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 16.0),
       child: RichText(
         text: TextSpan(
-          style: TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black),
           children: [
             TextSpan(
               text: '$label: ',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             TextSpan(text: value),
           ],
@@ -49,7 +52,7 @@ class Contact extends StatelessWidget {
       onPressed: () {
         _showContactFormDialog(context);
       },
-      child: Text('Send Us a Message'),
+      child: const Text('Send Us a Message'),
     );
   }
 
@@ -62,22 +65,22 @@ class Contact extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Contact Form'),
+          title: const Text('Contact Form'),
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: nameController,
-                decoration: InputDecoration(labelText: 'Your Name'),
+                decoration: const InputDecoration(labelText: 'Your Name'),
               ),
               TextField(
                 controller: emailController,
-                decoration: InputDecoration(labelText: 'Your Email'),
+                decoration: const InputDecoration(labelText: 'Your Email'),
               ),
               TextField(
                 controller: messageController,
-                decoration: InputDecoration(labelText: 'Your Message'),
+                decoration: const InputDecoration(labelText: 'Your Message'),
                 maxLines: 3,
               ),
             ],
@@ -86,13 +89,13 @@ class Contact extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 
-                print('Name: ${nameController.text}');
-                print('Email: ${emailController.text}');
-                print('Message: ${messageController.text}');
+                // print('Name: ${nameController.text}');
+                // print('Email: ${emailController.text}');
+                // print('Message: ${messageController.text}');
 
                 Navigator.of(context).pop(); 
               },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         );

@@ -35,19 +35,19 @@ class _AddState extends State<Add> {
         ),
         backgroundColor: Colors.transparent,
 
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(0))),
           actions: [
               IconButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => List_Of_Medicines()));
+                      builder: (context) => const ListOfMedicines()));
                 },
-                icon: Icon(Icons.list,color: Colors.black,)),
+                icon: const Icon(Icons.list,color: Colors.black,)),
           ]
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
               'assets/add.png'
@@ -245,23 +245,23 @@ class _AddState extends State<Add> {
   }
 
   Future<void> onAdd() async {
-    final _name = _nameController.text.trim();
-    final _address = _addressController.text.trim();
-    final _medicine = _medicinesController.text.trim();
-    final _age = _ageController.text.trim();
-    if (_name.isEmpty || _address.isEmpty || _medicine.isEmpty || _age.isEmpty) {
+    final name = _nameController.text.trim();
+    final address = _addressController.text.trim();
+    final medicine = _medicinesController.text.trim();
+    final age = _ageController.text.trim();
+    if (name.isEmpty || address.isEmpty || medicine.isEmpty || age.isEmpty) {
       return;
     }
-    print('$_name $_address $_medicine $_age');
+    // print('$name $address $medicine $age');
 
-    final _medicals = Model(
-        name: _name,
-        age: _age,
-        Medicines: _medicine,
-        address: _address,
+    final medicals = Model(
+        name: name,
+        age: age,
+        medicines: medicine,
+        address: address,
         image: _selectedImage!.path);
-    add(_medicals);
-    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>List_Of_Medicines()));
+    add(medicals);
+    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ListOfMedicines()));
   }
 
   Future<void> _pickImage(ImageSource source) async {

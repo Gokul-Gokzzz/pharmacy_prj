@@ -15,7 +15,7 @@ final String name ;
 final String address;
 
 @HiveField(3)
-final String Medicines;
+final String medicines;
 
 @HiveField(4)
 final String age;
@@ -23,5 +23,5 @@ final String age;
 @HiveField(5)
 final String? image;
 
-Model({required this.name, required this.address, required this.Medicines, required this.age,this.index,this.image});
+Model({required this.name, required this.address, required this.medicines, required this.age,this.index,this.image});
 }

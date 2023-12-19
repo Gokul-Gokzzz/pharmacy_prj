@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:health/model/fixed_product/model_product.dart';
 
-ValueNotifier<List<Product>> ProductListNotifier =
+ValueNotifier<List<Product>> productListNotifier =
     ValueNotifier<List<Product>>([]);
 
 Future<void> addProduct(Product product) async {
@@ -13,7 +13,7 @@ Future<void> addProduct(Product product) async {
 
 Future<void> updateProductList() async {
   final box = await Hive.openBox<Product>('products');
-  ProductListNotifier.value = box.values.toList();
+  productListNotifier.value = box.values.toList();
 }
 
 Future<void> deleteProduct(int index) async {

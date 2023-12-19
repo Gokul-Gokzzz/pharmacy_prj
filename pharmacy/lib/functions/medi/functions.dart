@@ -6,8 +6,8 @@ import 'package:hive/hive.dart';
 ValueNotifier<List<Model>> MedNotifier = ValueNotifier([]);
 
 Future<void> add(Model value) async {
-  final MedicalDB = await Hive.openBox<Model>("medical_db");
-  await MedicalDB.add(value);
+  final medicalDb = await Hive.openBox<Model>("medical_db");
+  await medicalDb.add(value);
   MedNotifier.value.add(value);
   MedNotifier.notifyListeners();      
 }
@@ -15,9 +15,9 @@ Future<void> add(Model value) async {
 
 
 Future <void> Medi() async {
-  final MedicalDB = await Hive.openBox<Model>('medical_db');
+  final medicalDb = await Hive.openBox<Model>('medical_db');
   MedNotifier.value.clear();
-  MedNotifier.value.addAll(MedicalDB.values);
+  MedNotifier.value.addAll(medicalDb.values);
   MedNotifier.notifyListeners();
 }
 

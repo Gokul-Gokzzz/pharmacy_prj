@@ -19,9 +19,9 @@ class _DetailesState extends State<Detailes> {
       ),
       body: Column(
         children: [
-          WTextformFeild(context, label: 'Name', hint: 'Name'),
-          WTextformFeild(context, label: 'Phone Number', hint: 'Phone Number'),
-          WTextformFeild(context, label: 'Address', hint: 'Address'),
+          wTextformFeild(context, label: 'Name', hint: 'Name'),
+          wTextformFeild(context, label: 'Phone Number', hint: 'Phone Number'),
+          wTextformFeild(context, label: 'Address', hint: 'Address'),
 const SizedBox(height: 20,),
           ElevatedButton(onPressed: (){},
            child:const Text('Save') 

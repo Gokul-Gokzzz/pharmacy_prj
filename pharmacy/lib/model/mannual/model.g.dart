@@ -19,7 +19,7 @@ class ModelAdapter extends TypeAdapter<Model> {
     return Model(
       name: fields[1] as String,
       address: fields[2] as String,
-      Medicines: fields[3] as String,
+      medicines: fields[3] as String,
       age: fields[4] as String,
       index: fields[0] as int?,
       image: fields[5] as String?,
@@ -37,7 +37,7 @@ class ModelAdapter extends TypeAdapter<Model> {
       ..writeByte(2)
       ..write(obj.address)
       ..writeByte(3)
-      ..write(obj.Medicines)
+      ..write(obj.medicines)
       ..writeByte(4)
       ..write(obj.age)
       ..writeByte(5)

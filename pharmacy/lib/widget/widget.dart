@@ -27,7 +27,7 @@ captiontext(context, {required text, required}) {
 }
 
 
-Widget WTextformFeild(context, {required label, required hint, controller}) {
+Widget wTextformFeild(context, {required label, required hint, controller}) {
   return Padding(
     padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.04),
     child: Column(
@@ -43,12 +43,12 @@ Widget WTextformFeild(context, {required label, required hint, controller}) {
           child: TextFormField(
               controller: controller,
               decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       borderSide:
                           BorderSide(color: Color.fromARGB(255, 16, 105, 140))),
                   hintText: hint,
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))))),
         )
       ],
@@ -57,11 +57,11 @@ Widget WTextformFeild(context, {required label, required hint, controller}) {
 }
 
 
-Widget Healthcare() {
+Widget healthcare() {
   return Column(
     children: [
       Container(
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         width: double.infinity,
         height: 200,
         child: Row(
@@ -71,22 +71,22 @@ Widget Healthcare() {
               width: 250,
               height: 200,
               color: Colors.black,
-              child: Image(
+              child: const Image(
                 image: AssetImage('assets/health1.jpg'),
                 fit: BoxFit.fill,
               ),
             ),
             Expanded(
               child: Container(
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 255, 255, 255),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(8, 0, 0, 4),
+                        margin: const EdgeInsets.fromLTRB(8, 0, 0, 4),
                         // color: Colors.yellow,
-                        child: Image(
+                        child: const Image(
                           image: AssetImage('assets/health2.png'),
                           fit: BoxFit.fill,
                         ),
@@ -94,10 +94,10 @@ Widget Healthcare() {
                     ),
                     Expanded(
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(8, 4, 0, 0),
+                        margin: const EdgeInsets.fromLTRB(8, 4, 0, 0),
                         color: const Color.fromARGB(255, 52, 51, 42),
                         child:
-                            Image(image: AssetImage('assets/health4.png')),
+                            const Image(image: AssetImage('assets/health4.png')),
                       ),
                     )
                   ],
@@ -118,11 +118,11 @@ Widget Healthcare() {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: RichText(
         text: TextSpan(
-          style: TextStyle(fontSize: 16.0, color: Colors.black),
+          style: const TextStyle(fontSize: 16.0, color: Colors.black),
           children: [
             TextSpan(
               text: '$title\n',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             TextSpan(text: description),
           ],
@@ -134,7 +134,7 @@ Widget Healthcare() {
   Widget _buildContactInfo(String info) {
     return Padding(
       padding: const EdgeInsets.only(top: 4.0),
-      child: Text(info, style: TextStyle(fontSize: 16.0)),
+      child: Text(info, style: const TextStyle(fontSize: 16.0)),
     );
   }
 

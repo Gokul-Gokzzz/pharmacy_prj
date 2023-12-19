@@ -6,7 +6,7 @@ class ProductCard extends StatelessWidget {
   final String price;
   final String imagePath;
 
-  const ProductCard({
+  const ProductCard({super.key, 
     required this.name,
     required this.quantity,
     required this.price,

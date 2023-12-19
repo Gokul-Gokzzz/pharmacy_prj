@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:health/model/fixed_product/model_product.dart';
 import 'package:health/views_main/health_care.dart';
 import 'package:health/views_main/list_medicines.dart';
 import 'package:health/views_main/offer_zone.dart';
@@ -51,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> product()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Product()));
                       },
                       child: Column(
                         children: [
@@ -132,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               GestureDetector(
                 onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const List_Of_Medicines()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const ListOfMedicines()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(top: 20),

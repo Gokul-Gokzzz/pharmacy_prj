@@ -110,12 +110,14 @@ import 'package:health/model/fixed_cart/model_cart.dart';
 import 'package:health/views_main/tab.dart/shopping_screen.dart';
 
 
-class product extends StatelessWidget {
+class Product extends StatelessWidget {
+  const Product({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product'),
+        title: const Text('Product'),
       ),
       body: Column(
         children: [
@@ -134,7 +136,7 @@ class product extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.delete),
+                            icon: const Icon(Icons.delete),
                             onPressed: () {
                               deleteCartItem(index);
                             },
@@ -151,10 +153,10 @@ class product extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => QuantityPage()),
+                MaterialPageRoute(builder: (context) => const QuantityPage()),
               );
             },
-            child: Text('Proceed to Checkout'),
+            child: const Text('Proceed to Checkout'),
           ),
         ],
       ),

@@ -25,10 +25,10 @@ class Edit extends StatefulWidget {
   });
 
   @override
-  State<Edit> createState() => _editState();
+  State<Edit> createState() => _EditState();
 }
 
-class _editState extends State<Edit> {
+class _EditState extends State<Edit> {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _addressController = TextEditingController();
   TextEditingController _medicinesController = TextEditingController();
@@ -53,7 +53,7 @@ class _editState extends State<Edit> {
       backgroundColor: const Color.fromARGB(255, 56, 56, 58),
       appBar: AppBar(
          flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -73,13 +73,13 @@ class _editState extends State<Edit> {
           IconButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const List_Of_Medicines()));
+                    builder: (context) => const ListOfMedicines()));
               },
               icon: const Icon(Icons.list,color: Colors.black,)),
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/edit.jpg'),fit: BoxFit.cover)
         ),
         child: ListView(
@@ -207,11 +207,11 @@ class _editState extends State<Edit> {
       return;
     } else {
       final update = Model(
-          name: name, address: address, Medicines: medicine, age: age, image: image);
+          name: name, address: address, medicines: medicine, age: age, image: image);
 
       edit(widget.index, update);
       Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const List_Of_Medicines()));
+          MaterialPageRoute(builder: (context) => const ListOfMedicines()));
     }
   }
 

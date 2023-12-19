@@ -16,7 +16,7 @@ class _HealthState extends State<Health> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Health Tips'),
+        title: const Text('Health Tips'),
       ),
       body: Column(
         children: [
@@ -24,14 +24,12 @@ class _HealthState extends State<Health> {
             onTap: () {
               // _showImageDialog(context);
             },
-            child: Container(
-              child: Image(
-                image: AssetImage(
-                    'assets/360_F_462160280_W3ZVodLcVwj7BkiZs8RP1wR5LCClQAm9.jpg'),
-              ),
+            child: const Image(
+              image: AssetImage(
+                  'assets/360_F_462160280_W3ZVodLcVwj7BkiZs8RP1wR5LCClQAm9.jpg'),
             ),
-          ),
-          Healthcare(),
+          ), 
+          healthcare(),
         ],
       ),
     );

@@ -6,14 +6,14 @@ import 'package:health/model/mannual/model.dart';
 import 'package:health/views_main/edit.dart';
 import 'package:health/views_main/view.dart';
 
-class List_Of_Medicines extends StatefulWidget {
-  const List_Of_Medicines({super.key});
+class ListOfMedicines extends StatefulWidget {
+  const ListOfMedicines({super.key});
 
   @override
-  State<List_Of_Medicines> createState() => _List_Of_MedicinesState();
+  State<ListOfMedicines> createState() => _ListOfMedicinesState();
 }
 
-class _List_Of_MedicinesState extends State<List_Of_Medicines> {
+class _ListOfMedicinesState extends State<ListOfMedicines> {
   // --------------------------------
   String _search = '';
   List<Model> searchedlist = [];
@@ -126,7 +126,7 @@ class _List_Of_MedicinesState extends State<List_Of_Medicines> {
                                     builder: (context) => ViewScreen(
                                       name: data.name,
                                       address: data.address,
-                                      medicine: data.Medicines,
+                                      medicine: data.medicines,
                                       age: data.age,
                                       imagePath: data.image ?? "",
                                     ),
@@ -153,7 +153,7 @@ class _List_Of_MedicinesState extends State<List_Of_Medicines> {
                                               index: index,
                                               name: data.name,
                                               age: data.address,
-                                              medicines: data.Medicines,
+                                              medicines: data.medicines,
                                               address: data.age,
                                               imagePath: data.image),
                                         ));

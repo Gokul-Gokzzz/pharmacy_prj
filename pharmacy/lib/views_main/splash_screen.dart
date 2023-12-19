@@ -37,24 +37,24 @@ class _ScreenSplashState extends State<ScreenSplash> {
 
   
 
-Future<void> Login() async{
- await Future.delayed(Duration(seconds: 3));
+Future<void> login() async{
+ await Future.delayed(const Duration(seconds: 3));
  Navigator.of(context).pushReplacement(
   MaterialPageRoute(
     builder: (ctx){
-  return Welcome();
+  return const Welcome();
  }));
 }
 
 
 Future <void> log()async{
-  final _sharedperfer = await SharedPreferences.getInstance();
+  final sharedperfer = await SharedPreferences.getInstance();
   
-  final UserLog =_sharedperfer.getBool(SAVE_KEY_NAME);
-  if(UserLog == null || UserLog == false){
-   Login();   
+  final userLog =sharedperfer.getBool(save_Key_Name);
+  if(userLog == null || userLog == false){
+   login();   
   }else{
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Home()));
   }
 } 
 

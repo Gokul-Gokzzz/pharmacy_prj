@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Privacy extends StatelessWidget {
+  const Privacy({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Privacy Policy'),
+        title: const Text('Privacy Policy'),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -24,25 +26,25 @@ class Privacy extends StatelessWidget {
                 _buildParagraph(
                   'Additionally, we may collect information about your usage of the app, including but not limited to your interactions, preferences, and device information.',
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
         
                 _buildSectionTitle('How We Use Your Information'),
                 _buildParagraph(
                   'We use the information we collect to provide and improve our medical app, deliver personalized content, send notifications, respond to user inquiries, and fulfill legal or regulatory requirements.',
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
         
                 _buildSectionTitle('Data Security'),
                 _buildParagraph(
                   'We take reasonable measures to protect your personal information from unauthorized access or disclosure. However, no method of transmission over the internet or electronic storage is 100% secure.',
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
         
                 _buildSectionTitle('Third-Party Services'),
                 _buildParagraph(
                   'Our app may contain links to third-party websites or services that we do not control. We are not responsible for the privacy practices or content of these third-party sites.',
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
         
                 _buildSectionTitle('Updates to this Privacy Policy'),
                 _buildParagraph(
@@ -61,7 +63,7 @@ class Privacy extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
@@ -74,7 +76,7 @@ class Privacy extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Text(
         text,
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
     );
   }

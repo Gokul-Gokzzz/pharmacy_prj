@@ -5,7 +5,8 @@ import 'package:health/model/fixed_cart/model_cart.dart';
 import 'package:health/model/fixed_product/model_product.dart';
 import 'package:health/views_main/splash_screen.dart';
  
-const SAVE_KEY_NAME = 'UserLogin';
+const save_Key_Name = 'UserLogin';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: ScreenSplash(),
     );

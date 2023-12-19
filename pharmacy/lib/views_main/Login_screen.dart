@@ -17,7 +17,7 @@ class Loginpage extends StatefulWidget {
 class _LoginpageState extends State<Loginpage> {
   final _UsernameController = TextEditingController();
   final _PasswordController = TextEditingController();
-  bool _isDataMatched = true;
+  final bool _isDataMatched = true;
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -132,11 +132,11 @@ class _LoginpageState extends State<Loginpage> {
                       child: GestureDetector(
                 onTap: (){
                   if(_formKey.currentState!.validate()){
-                    CheckLogin(context);
+                    checkLogin(context);
                   }else{
-                    print('Data is empty');
+                    // print('Data is empty');
                   }
-                  CheckLogin(context);
+                  checkLogin(context);
                  
                 },
                 child: Container(
@@ -187,29 +187,29 @@ class _LoginpageState extends State<Loginpage> {
     );
   }
 
-void  CheckLogin(BuildContext ctx)async{
+void  checkLogin(BuildContext ctx)async{
     final username = _UsernameController.text;
     final password = _PasswordController.text;
 
     if(username == 'Athi' && password == '666999'){
-      print('Username pass match');
+      // print('Username pass match');
 
-      final _sharedperfer = await SharedPreferences.getInstance();
-      await _sharedperfer.setBool(SAVE_KEY_NAME, true);
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>Home()));
+      final sharedperfer = await SharedPreferences.getInstance();
+      await sharedperfer.setBool(save_Key_Name, true);
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>const Home()));
     }else{
-      final _errorMessage = 'Username password doesnot match';
+      const errorMessage = 'Username password doesnot match';
 
       showDialog(context: ctx,
        builder: (ctx1){
         return AlertDialog(
-          title: Text('Error'),
-          content: Text(_errorMessage),
+          title: const Text('Error'),
+          content: const Text(errorMessage),
           actions: [TextButton(
             onPressed: (){
               Navigator.of(ctx1).pop();
             },
-             child: Text('close')
+             child: const Text('close')
              )],
         );
        }
