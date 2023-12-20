@@ -15,8 +15,8 @@ class Loginpage extends StatefulWidget {
 }
 
 class _LoginpageState extends State<Loginpage> {
-  final _UsernameController = TextEditingController();
-  final _PasswordController = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
   final bool _isDataMatched = true;
   final _formKey = GlobalKey<FormState>();
   @override
@@ -60,7 +60,7 @@ class _LoginpageState extends State<Loginpage> {
                 child: Column(
                   children: [
                      TextFormField(
-                      controller: _UsernameController,
+                      controller: _usernameController,
                       decoration: const InputDecoration(
                         suffixIcon: Icon(Icons.check,color:Colors.grey ,),
                         label: Text('Gmail',style:TextStyle(
@@ -77,7 +77,7 @@ class _LoginpageState extends State<Loginpage> {
                       },
                     ),
                      TextFormField(
-                      controller: _PasswordController,
+                      controller: _passwordController,
                       
                         decoration: const InputDecoration(
                         suffixIcon: Icon(Icons.visibility_off,color:Colors.grey ,),
@@ -188,14 +188,14 @@ class _LoginpageState extends State<Loginpage> {
   }
 
 void  checkLogin(BuildContext ctx)async{
-    final username = _UsernameController.text;
-    final password = _PasswordController.text;
+    final username = _usernameController.text;
+    final password = _passwordController.text;
 
     if(username == 'Athi' && password == '666999'){
       // print('Username pass match');
 
       final sharedperfer = await SharedPreferences.getInstance();
-      await sharedperfer.setBool(save_Key_Name, true);
+      await sharedperfer.setBool(save_key_name, true);
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>const Home()));
     }else{
       const errorMessage = 'Username password doesnot match';

@@ -27,14 +27,14 @@ class _ListOfMedicinesState extends State<ListOfMedicines> {
   @override
   void initState() {
     super.initState();
-    Medi();
+    medi();
   }
 
   void searchResult() {
     setState(() {
-      searchedlist = MedNotifier.value
-          .where((Model) =>
-              Model.name.toLowerCase().contains(_search.toLowerCase()))
+      searchedlist = medNotifier.value
+          .where((model) =>
+              model.name.toLowerCase().contains(_search.toLowerCase()))
           .toList();
     });
   }
@@ -104,11 +104,11 @@ class _ListOfMedicinesState extends State<ListOfMedicines> {
               ),
               Expanded(
                 child: ValueListenableBuilder(
-                  valueListenable: MedNotifier,
-                  builder: (BuildContext ctx, List<Model> MdList,
+                  valueListenable: medNotifier,
+                  builder: (BuildContext ctx, List<Model> mdList,
                    Widget? child) {
                     final display =
-                        searchedlist.isNotEmpty ? searchedlist : MdList;
+                        searchedlist.isNotEmpty ? searchedlist : mdList;
                     return ListView.separated(
                       itemBuilder: (ctx, index) {
                         final data = display[index];

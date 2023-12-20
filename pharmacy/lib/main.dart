@@ -5,7 +5,7 @@ import 'package:health/model/fixed_cart/model_cart.dart';
 import 'package:health/model/fixed_product/model_product.dart';
 import 'package:health/views_main/splash_screen.dart';
  
-const save_Key_Name = 'UserLogin';
+const save_key_name = 'UserLogin';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

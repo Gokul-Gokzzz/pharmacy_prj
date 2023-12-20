@@ -123,7 +123,7 @@ class Product extends StatelessWidget {
         children: [
           Expanded(
             child: ValueListenableBuilder<List<CartItem>>(
-              valueListenable: CartListNotifier,
+              valueListenable: cartListNotifier,
               builder: (context, cartItems, _) {
                 return ListView.builder(
                   itemCount: cartItems.length,

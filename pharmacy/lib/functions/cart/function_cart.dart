@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:health/model/fixed_cart/model_cart.dart';
 
-ValueNotifier<List<CartItem>> CartListNotifier =
+ValueNotifier<List<CartItem>> cartListNotifier =
     ValueNotifier<List<CartItem>>([]);
 
 Future<void> addCartItem(CartItem cartItem) async {
@@ -13,7 +13,7 @@ Future<void> addCartItem(CartItem cartItem) async {
 
 Future<void> updateCartList() async {
   final box = await Hive.openBox<CartItem>('cart');
-  CartListNotifier.value = box.values.toList();
+  cartListNotifier.value = box.values.toList();
 }
 
 Future<void> deleteCartItem(int index) async {

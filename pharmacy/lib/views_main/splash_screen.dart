@@ -50,7 +50,7 @@ Future<void> login() async{
 Future <void> log()async{
   final sharedperfer = await SharedPreferences.getInstance();
   
-  final userLog =sharedperfer.getBool(save_Key_Name);
+  final userLog =sharedperfer.getBool(save_key_name);
   if(userLog == null || userLog == false){
    login();   
   }else{

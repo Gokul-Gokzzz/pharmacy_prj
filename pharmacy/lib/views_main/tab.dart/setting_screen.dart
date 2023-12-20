@@ -81,7 +81,7 @@ class _SettingState extends State<Setting> {
        
           set(icon:
            IconButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Privacy()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Privacy()));
             }, 
             icon: const Icon(Icons.shopping_cart_checkout)),text: const Text('𝐏𝐫𝐢𝐯𝐚𝐜𝐲')),
       
