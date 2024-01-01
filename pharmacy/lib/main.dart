@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:health/controller/addprovider.dart';
+import 'package:health/controller/bottombarprovider.dart';
+import 'package:health/controller/editprovider.dart';
+import 'package:health/controller/listprovider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:health/model/mannual/model.dart';
-import 'package:health/model/fixed_cart/model_cart.dart';
-import 'package:health/model/fixed_product/model_product.dart';
 import 'package:health/views_main/splash_screen.dart';
+import 'package:provider/provider.dart';
  
 const save_key_name = 'UserLogin';
 
@@ -14,13 +17,6 @@ void main() async {
     Hive.registerAdapter(ModelAdapter());
   }
 
-  if (!Hive.isAdapterRegistered(CartItemAdapter().typeId)) {
-    Hive.registerAdapter(CartItemAdapter());
-  }
-
-  if (!Hive.isAdapterRegistered(ProductAdapter().typeId)) {
-    Hive.registerAdapter(ProductAdapter());
-  }
 
   runApp(const MyApp());
 }
@@ -30,9 +26,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ScreenSplash(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => AddProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => EditProvider(),
+          ),
+          ChangeNotifierProvider(
+            create:(context) =>  ListProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => BottomBarProvider(),
+          ),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: ScreenSplash(),
+      ),
     );
   }
 }

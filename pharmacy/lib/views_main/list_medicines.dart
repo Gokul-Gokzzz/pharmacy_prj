@@ -1,50 +1,23 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:health/functions/medi/functions.dart';
+import 'package:health/controller/listprovider.dart';
+import 'package:health/service/medi/functions.dart';
 import 'package:health/model/mannual/model.dart';
 import 'package:health/views_main/edit.dart';
 import 'package:health/views_main/view.dart';
+import 'package:provider/provider.dart';
 
-class ListOfMedicines extends StatefulWidget {
+class ListOfMedicines extends StatelessWidget {
   const ListOfMedicines({super.key});
 
   @override
-  State<ListOfMedicines> createState() => _ListOfMedicinesState();
-}
-
-class _ListOfMedicinesState extends State<ListOfMedicines> {
-  // --------------------------------
-  String _search = '';
-  List<Model> searchedlist = [];
-  List<Model> mdList = [];
-  // ---------------------------------------------
-  // Medic() async {
-  //   final medica = await Medi ();
-  //   MedNotifier.value = medica;
-  // }
-
-  @override
-  void initState() {
-    super.initState();
-    medi();
-  }
-
-  void searchResult() {
-    setState(() {
-      searchedlist = medNotifier.value
-          .where((model) =>
-              model.name.toLowerCase().contains(_search.toLowerCase()))
-          .toList();
-    });
-  }
-
-  // --------------------------------------
-
-  @override
   Widget build(BuildContext context) {
+    final prd = Provider.of<ListProvider>(context);
+     medi();
     return SafeArea(
       child: Scaffold(
+
         appBar: AppBar(
           flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -64,42 +37,43 @@ class _ListOfMedicinesState extends State<ListOfMedicines> {
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(0))),
         ),
         body: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/list.png'), fit: BoxFit.cover)),
+        
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(15),
-                child: TextFormField(
-                  style: const TextStyle(color: Colors.black),
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    contentPadding: const EdgeInsets.all(10),
-                    prefixIcon: const Icon(Icons.search, color: Colors.black),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(75),
-                      borderSide: const BorderSide(color: Colors.transparent),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
-                      borderSide: const BorderSide(
-                        color: Colors.lightBlue,
-                        width: 2,
+                child: Consumer(
+                  builder: (context, value, child) => 
+                   TextFormField(
+                    style: const TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      contentPadding: const EdgeInsets.all(10),
+                      prefixIcon: const Icon(Icons.search, color: Colors.black),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(75),
+                        borderSide: const BorderSide(color: Colors.transparent),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: const BorderSide(
+                          color: Colors.lightBlue,
+                          width: 2,
+                        ),
                       ),
                     ),
+                    onChanged: (value) {
+                      // ----------------------
+                     
+                         prd.search = value;
+                    
+                      prd. searchResult();
+                  
+                      // ---------------------
+                    },
                   ),
-                  onChanged: (value) {
-                    // ----------------------
-                    setState(() {
-                      _search = value;
-                    });
-                    searchResult();
-
-                    // ---------------------
-                  },
                 ),
               ),
               Expanded(
@@ -108,7 +82,7 @@ class _ListOfMedicinesState extends State<ListOfMedicines> {
                   builder: (BuildContext ctx, List<Model> mdList,
                    Widget? child) {
                     final display =
-                        searchedlist.isNotEmpty ? searchedlist : mdList;
+                         prd.searchedlist.isNotEmpty ?  prd.searchedlist : mdList;
                     return ListView.separated(
                       itemBuilder: (ctx, index) {
                         final data = display[index];

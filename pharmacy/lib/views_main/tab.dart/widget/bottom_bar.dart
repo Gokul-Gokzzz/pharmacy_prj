@@ -1,33 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:health/controller/bottombarprovider.dart';
 import 'package:health/views_main/add_screen.dart';
-import 'package:health/views_main/product_screen.dart';
+import 'package:health/views_main/medi_menu.dart';
 import 'package:health/views_main/tab.dart/home_screen.dart';
 import 'package:health/views_main/tab.dart/setting_screen.dart';
+import 'package:provider/provider.dart';
 
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
-}
-int currentindex = 0;
-
-final List _tabs = [
-  const HomeScreen(),
-  const Product(),
-  const Add(),
-  const Setting(),
-  
-];
-
-class _HomeState extends State<Home> {
-  @override
   Widget build(BuildContext context) {
+    final prd = Provider.of<BottomBarProvider>(context);
     double size = MediaQuery.of(context).size.width; 
     return Scaffold(
-      body: _tabs [currentindex],
+      body: prd.tabs [prd.currentindex],
       bottomNavigationBar: 
       Container(
         width: size*1,
@@ -36,9 +25,7 @@ class _HomeState extends State<Home> {
           padding: const EdgeInsets.all(15),
           child: GNav(
             onTabChange: (index){
-              setState(() {
-                currentindex = index;
-              });
+              prd.bottom(index);
             },
             backgroundColor:  const Color.fromARGB(255, 3, 45, 79),
             color: Colors.white,
@@ -57,3 +44,5 @@ class _HomeState extends State<Home> {
     );
   }
 }
+// int currentindex = 0;
+

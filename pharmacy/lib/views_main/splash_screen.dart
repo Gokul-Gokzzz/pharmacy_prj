@@ -54,7 +54,7 @@ Future <void> log()async{
   if(userLog == null || userLog == false){
    login();   
   }else{
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Home()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Home()));
   }
 } 
 

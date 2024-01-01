@@ -2,20 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:health/views_main/health_care.dart';
 import 'package:health/views_main/list_medicines.dart';
 import 'package:health/views_main/offer_zone.dart';
-import 'package:health/views_main/product_screen.dart';
+import 'package:health/views_main/medi_menu.dart';
 import 'package:health/widget/app_bar.dart';
 
 
 
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar:appbar(),
       body: SingleChildScrollView(
         child: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/bg1.jpg'),fit: BoxFit.cover)),
+       
           child: Column(
             children: [
              
@@ -50,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Product()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  MenuMedipage()));
                       },
                       child: Column(
                         children: [

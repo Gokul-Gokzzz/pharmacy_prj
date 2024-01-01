@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:health/views_main/login_screen.dart';
 
 
-class Welcome extends StatefulWidget {
+class Welcome extends StatelessWidget {
   const Welcome({Key? key}) : super(key: key);
 
-  @override
-  State<Welcome> createState() => _WelcomeState();
-}
-
-class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +33,7 @@ class _WelcomeState extends State<Welcome> {
           GestureDetector(
             onTap: (){
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const Loginpage()));
+                  MaterialPageRoute(builder: (context) =>  Loginpage()));
             },
             child: Container(
               height: 53,
@@ -58,7 +53,7 @@ class _WelcomeState extends State<Welcome> {
            GestureDetector(
              onTap: (){
                Navigator.pushReplacement(context,
-                   MaterialPageRoute(builder: (context) => const Loginpage()));
+                   MaterialPageRoute(builder: (context) =>  Loginpage()));
              },
              child: Container(
                height: 53,

@@ -7,18 +7,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
 
-class Loginpage extends StatefulWidget {    
-  const Loginpage({super.key});
+class Loginpage extends StatelessWidget {    
+   Loginpage({super.key});
 
-  @override
-  State<Loginpage> createState() => _LoginpageState();
-}
-
-class _LoginpageState extends State<Loginpage> {
   final _usernameController = TextEditingController();
+
   final _passwordController = TextEditingController();
+
   final bool _isDataMatched = true;
+
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -196,7 +195,7 @@ void  checkLogin(BuildContext ctx)async{
 
       final sharedperfer = await SharedPreferences.getInstance();
       await sharedperfer.setBool(save_key_name, true);
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>const Home()));
+      Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx)=> Home()));
     }else{
       const errorMessage = 'Username password doesnot match';
 

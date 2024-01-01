@@ -46,9 +46,6 @@ class ViewScreen extends StatelessWidget {
           centerTitle: true,
         ),
         body: Container(
-          decoration: const BoxDecoration(
-            image:DecorationImage(image: AssetImage('assets/view.jpg'),fit: BoxFit.cover) 
-            ),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Container(

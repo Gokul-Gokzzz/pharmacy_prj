@@ -8,14 +8,9 @@ import 'package:health/widget/widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-class Setting extends StatefulWidget {
+class Setting extends StatelessWidget {
   const Setting({super.key});
 
-  @override
-  State<Setting> createState() => _SettingState();
-}
-
-class _SettingState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -46,9 +41,7 @@ class _SettingState extends State<Setting> {
            Container(
             height: double.infinity,
         width: double.infinity,
-        decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/doct1.jpg'),fit: BoxFit.cover)
-        ),
+     
             child: const Padding(
               padding: EdgeInsets.only(bottom: 500),
               child: CircleAvatar(
@@ -108,10 +101,9 @@ class _SettingState extends State<Setting> {
     );
   }
 
-
   signout(BuildContext ctx)async{
     final sharedperfer = await SharedPreferences.getInstance();
     await sharedperfer.clear();
-    Navigator.of(ctx).pushAndRemoveUntil(MaterialPageRoute(builder: (ctx1)=>const Loginpage()), (route) => false);
+    Navigator.of(ctx).pushAndRemoveUntil(MaterialPageRoute(builder: (ctx1)=> Loginpage()), (route) => false);
   }
 }

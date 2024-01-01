@@ -2,28 +2,17 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:health/controller/addprovider.dart';
 import 'package:health/views_main/list_medicines.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:health/functions/medi/functions.dart';
-import 'package:health/model/mannual/model.dart';
+import 'package:provider/provider.dart';
 
-class Add extends StatefulWidget {
+class Add extends StatelessWidget { 
   const Add({Key? key}) : super(key: key);
 
   @override
-  State<Add> createState() => _AddState();
-}
-
-class _AddState extends State<Add> {
-  final _nameController = TextEditingController();
-  final _addressController = TextEditingController();
-  final _medicinesController = TextEditingController();
-  final _ageController = TextEditingController();
-  File? _selectedImage;
-  final _formKey = GlobalKey<FormState>();
-
-  @override
   Widget build(BuildContext context) {
+    final prd = Provider.of<AddProvider>(context);
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -47,17 +36,10 @@ class _AddState extends State<Add> {
           ]
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/add.png'
-              ),
-            fit: BoxFit.cover
-            ),
-        ),
+        
         child: SingleChildScrollView(
           child: Form(
-            key: _formKey,
+            key: prd.formKey,
             child: Column(
               children: [
                 Padding(
@@ -65,22 +47,22 @@ class _AddState extends State<Add> {
                   child: CircleAvatar(
                     radius: 80,
                     backgroundColor: Colors.black,
-                    backgroundImage: _selectedImage != null
-                        ? FileImage(_selectedImage!)
+                    backgroundImage: prd.selectedImage != null
+                        ? FileImage(prd.selectedImage!)
                         : const AssetImage(
                             "assets/photo-1562243061-204550d8a2c9.png") as ImageProvider,
                   ),
                 ),
                 ElevatedButton.icon(
                   onPressed: () {
-                    _pickImage(ImageSource.gallery);
+                    prd.pickImage(ImageSource.gallery);
                   },
                   icon: const Icon(Icons.image),
                   label: const Text('GALLERY'),
                 ),
                 ElevatedButton.icon(
                   onPressed: () {
-                    _pickImage(ImageSource.camera);
+                    prd.pickImage(ImageSource.camera);
                   },
                   icon: const Icon(Icons.image),
                   label: const Text('CAMERA'),
@@ -100,7 +82,7 @@ class _AddState extends State<Add> {
                             RegExp(r'[a-z,A-Z," "]'))
                       ],
                       keyboardType: TextInputType.name,
-                      controller: _nameController,
+                      controller: prd.nameController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -132,7 +114,7 @@ class _AddState extends State<Add> {
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: TextFormField(
                     keyboardType: TextInputType.streetAddress,
-                    controller: _addressController,
+                    controller: prd.addressController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -163,7 +145,7 @@ class _AddState extends State<Add> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: TextFormField(
-                    controller: _medicinesController,
+                    controller: prd.medicinesController,
                     keyboardType: TextInputType.streetAddress,
                     decoration: InputDecoration(
                       filled: true,
@@ -198,7 +180,7 @@ class _AddState extends State<Add> {
                       FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
                     ],
                     keyboardType: TextInputType.number,
-                    controller: _ageController,
+                    controller: prd.ageController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -229,8 +211,8 @@ class _AddState extends State<Add> {
                 FloatingActionButton(
                   backgroundColor: Colors.blue,
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      onAdd();
+                    if (prd.formKey.currentState!.validate()) {
+                      prd.onAdd(context);
                     }
                   },
                   child: const Icon(Icons.add),
@@ -243,51 +225,4 @@ class _AddState extends State<Add> {
       ),
     );
   }
-
-  Future<void> onAdd() async {
-    final name = _nameController.text.trim();
-    final address = _addressController.text.trim();
-    final medicine = _medicinesController.text.trim();
-    final age = _ageController.text.trim();
-    if (name.isEmpty || address.isEmpty || medicine.isEmpty || age.isEmpty) {
-      return;
-    }
-    // print('$name $address $medicine $age');
-
-    final medicals = Model(
-        name: name,
-        age: age,
-        medicines: medicine,
-        address: address,
-        image: _selectedImage!.path);
-    add(medicals);
-    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ListOfMedicines()));
-  }
-
-  Future<void> _pickImage(ImageSource source) async {
-    final returnImage = await ImagePicker().pickImage(source: source);
-
-    if (returnImage == null) {
-      return;
-    }
-
-    setState(() {
-      _selectedImage = File(returnImage.path);
-    });
-  }
-
-  // void _refreshScreen() {
-  //   _nameController.clear();
-  //   _addressController.clear();
-  //   _medicinesController.clear();
-  //   _ageController.clear();
-
-  //   // --------------------------
-  //   setState(() {
-  //     _selectedImage = null;
-  //   });
-  //   // -----------------------------
-  // }
-
-
 }

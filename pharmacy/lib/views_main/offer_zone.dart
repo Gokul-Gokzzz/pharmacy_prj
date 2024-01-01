@@ -73,8 +73,6 @@ class _OfferState extends State<Offer> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/p'), fit: BoxFit.cover)),
           child: const Column(
             children: [
               ProductCard(
