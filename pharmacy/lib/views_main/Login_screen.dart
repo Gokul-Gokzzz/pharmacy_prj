@@ -1,4 +1,6 @@
 
+// ignore_for_file: use_build_context_synchronously, file_names
+
 import 'package:flutter/material.dart';
 import 'package:health/main.dart';
 import 'package:health/views_main/tab.dart/widget/bottom_bar.dart';
@@ -195,7 +197,7 @@ void  checkLogin(BuildContext ctx)async{
 
       final sharedperfer = await SharedPreferences.getInstance();
       await sharedperfer.setBool(save_key_name, true);
-      Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx)=> Home()));
+      Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx)=> const Home()));
     }else{
       const errorMessage = 'Username password doesnot match';
 

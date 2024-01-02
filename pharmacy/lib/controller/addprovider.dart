@@ -1,10 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:health/service/medi/functions.dart';
+import 'package:health/controller/dbprovider.dart';
 import 'package:health/model/mannual/model.dart';
 import 'package:health/views_main/list_medicines.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
 class AddProvider extends ChangeNotifier{
    final nameController = TextEditingController();
@@ -32,7 +33,7 @@ class AddProvider extends ChangeNotifier{
         address: address,
         image: selectedImage!.path
         );
-    add(medicals);
+    Provider.of<DbProvider>(context, listen: false). add(medicals);
     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ListOfMedicines()));
   }
 

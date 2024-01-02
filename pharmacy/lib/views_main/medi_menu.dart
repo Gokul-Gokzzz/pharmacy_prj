@@ -1,5 +1,7 @@
 
 
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:health/model/mannual/med.dart';
 import 'package:health/theme/colors.dart';
@@ -13,19 +15,19 @@ class MenuMedipage extends StatelessWidget {
    MenuMedipage({super.key});
 
   List medlist = [
-    med(
+    Med(
       name: 'sds',
        price: '23',
         imagePath: 'passets/Neopan Tablet,Mefenamic Acid 250mg,Paracetamol 500mg,price,uses,side Effects - Drugcarts.jpg',
          rating: '34'
          ),
-    med(
+    Med(
       name: 'sds',
        price: '23',
         imagePath: 'assets/livogen.png',
          rating: '34'
          ),
-    med(
+    Med(
       name: 'sds',
        price: '23',
         imagePath: 'assets/moxclave.jpg',
@@ -126,6 +128,7 @@ class MenuMedipage extends StatelessWidget {
               itemCount: medlist.length,
               itemBuilder: (context , index){
                Medlist;
+               return null;
               },
                )
             )

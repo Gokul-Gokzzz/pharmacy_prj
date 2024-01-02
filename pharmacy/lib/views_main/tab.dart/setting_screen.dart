@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:health/views_main/login_screen.dart';
 import 'package:health/views_main/about.dart';
@@ -38,7 +40,7 @@ class Setting extends StatelessWidget {
       body: Stack(
         children: [
           
-           Container(
+           SizedBox(
             height: double.infinity,
         width: double.infinity,
      

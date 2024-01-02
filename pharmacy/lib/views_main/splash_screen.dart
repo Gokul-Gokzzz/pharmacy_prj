@@ -1,6 +1,8 @@
 
 
 
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:health/main.dart';
 import 'package:health/views_main/welcome_screen.dart';
@@ -54,6 +56,7 @@ Future <void> log()async{
   if(userLog == null || userLog == false){
    login();   
   }else{
+    // ignore: prefer_const_constructors
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Home()));
   }
 } 

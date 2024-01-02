@@ -45,57 +45,55 @@ class ViewScreen extends StatelessWidget {
           title: const Text('view'),
           centerTitle: true,
         ),
-        body: Container(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 160,
-                    height: 160,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.lightBlue,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.4),
-                          blurRadius: 15,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: CircleAvatar(
-                      radius: 80,
-                      backgroundColor: Colors.transparent,
-                      backgroundImage: FileImage(File(imagePath)),
-                    ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 160,
+                  height: 160,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.lightBlue,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.4),
+                        blurRadius: 15,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 30),
-                  CardItem(
-                    title: 'Name',
-                    content: name,
-                     color: false,
+                  child: CircleAvatar(
+                    radius: 80,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: FileImage(File(imagePath)),
                   ),
-                  CardItem(
-                    title: 'Address',
-                    content: address,
-                     color: true,
-                  ),
-                  CardItem(
-                    title: 'Medicine',
-                    content: medicine,
-                     color: false,
-                  ),
-                  CardItem(
-                    title: 'Age',
-                    content: age,
+                ),
+                const SizedBox(height: 30),
+                CardItem(
+                  title: 'Name',
+                  content: name,
+                   color: false,
+                ),
+                CardItem(
+                  title: 'Address',
+                  content: address,
                    color: true,
-                  ),
-                ],
-              ),
+                ),
+                CardItem(
+                  title: 'Medicine',
+                  content: medicine,
+                   color: false,
+                ),
+                CardItem(
+                  title: 'Age',
+                  content: age,
+                 color: true,
+                ),
+              ],
             ),
           ),
         ),

@@ -1,10 +1,12 @@
-class med {
+// ignore_for_file: unused_element
+
+class Med {
   String name;
   String price;
   String imagePath;
   String rating;
 
-  med({
+  Med({
     required this.name,
     required this.price,
     required this.imagePath,

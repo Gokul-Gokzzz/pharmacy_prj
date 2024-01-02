@@ -1,6 +1,9 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:health/controller/addprovider.dart';
 import 'package:health/controller/bottombarprovider.dart';
+import 'package:health/controller/dbprovider.dart';
 import 'package:health/controller/editprovider.dart';
 import 'package:health/controller/listprovider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -40,6 +43,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (context) => BottomBarProvider(),
           ),
+          ChangeNotifierProvider(
+            create: (context) => DbProvider(),
+            ),
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,

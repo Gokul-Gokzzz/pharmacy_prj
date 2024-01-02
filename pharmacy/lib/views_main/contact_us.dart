@@ -89,9 +89,7 @@ class Contact extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 
-                // print('Name: ${nameController.text}');
-                // print('Email: ${emailController.text}');
-                // print('Message: ${messageController.text}');
+           
 
                 Navigator.of(context).pop(); 
               },

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, prefer_interpolation_to_compose_strings
+
 import 'package:flutter/material.dart';
 
 class Medlist extends StatelessWidget {
@@ -20,6 +22,7 @@ class Medlist extends StatelessWidget {
 
           Text(
             med.name,
+            // ignore: prefer_const_constructors
             style:TextStyle(fontSize: 20) ,
           ),
 

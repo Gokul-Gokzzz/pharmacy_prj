@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:health/controller/bottombarprovider.dart';
-import 'package:health/views_main/add_screen.dart';
-import 'package:health/views_main/medi_menu.dart';
-import 'package:health/views_main/tab.dart/home_screen.dart';
-import 'package:health/views_main/tab.dart/setting_screen.dart';
 import 'package:provider/provider.dart';
 
 
