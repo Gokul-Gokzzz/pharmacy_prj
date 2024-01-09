@@ -6,8 +6,6 @@ import 'package:health/views_main/medi_menu.dart';
 import 'package:health/widget/app_bar.dart';
 
 
-
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 

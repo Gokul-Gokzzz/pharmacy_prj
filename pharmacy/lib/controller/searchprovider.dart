@@ -3,23 +3,8 @@ import 'package:health/controller/dbprovider.dart';
 import 'package:health/model/mannual/model.dart';
 import 'package:provider/provider.dart';
 
-class ListProvider extends ChangeNotifier{
+class SearchProvider extends ChangeNotifier{
 
-  // String search = '';
-  // List<Model> searchedlist = [];
-  // List<Model> mdList = [];
-
-
-  // void searchResult() {
-   
-  //     searchedlist = mdList
-  //         .where((model) =>
-  //             model.name.toLowerCase().contains(search.toLowerCase()))
-  //         .toList();
-
-  //         notifyListeners();
-   
-  // }
 
   String search = "";
   List<Model> searchList = [];

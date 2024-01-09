@@ -33,7 +33,7 @@ class AddProvider extends ChangeNotifier{
         address: address,
         image: selectedImage!.path
         );
-    Provider.of<DbProvider>(context, listen: false). add(medicals);
+    Provider.of<DbProvider>(context, listen: false). addMedicine(medicals);
     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ListOfMedicines()));
   }
 

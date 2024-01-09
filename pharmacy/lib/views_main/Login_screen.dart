@@ -192,7 +192,7 @@ void  checkLogin(BuildContext ctx)async{
     final username = _usernameController.text;
     final password = _passwordController.text;
 
-    if(username == 'Athi' && password == '666999'){
+    if(username == 'gk' && password == '666999'){
       // print('Username pass match');
 
       final sharedperfer = await SharedPreferences.getInstance();

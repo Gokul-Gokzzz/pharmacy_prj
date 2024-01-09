@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health/views_main/add_screen.dart';
-import 'package:health/views_main/medi_menu.dart';
+
 import 'package:health/views_main/tab.dart/home_screen.dart';
 import 'package:health/views_main/tab.dart/setting_screen.dart';
 
@@ -15,7 +15,7 @@ bottom(index) {
               }
               final List tabs = [
   const HomeScreen(),
-   MenuMedipage(),
+ 
   const Add(),
   const Setting(),
   

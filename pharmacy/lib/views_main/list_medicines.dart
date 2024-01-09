@@ -1,8 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:health/controller/dbprovider.dart';
-import 'package:health/controller/listprovider.dart';
+import 'package:health/controller/searchprovider.dart';
 import 'package:health/views_main/edit.dart';
 import 'package:health/views_main/view.dart';
 import 'package:provider/provider.dart';
@@ -12,11 +11,10 @@ class ListOfMedicines extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final prd = Provider.of<ListProvider>(context);
-    Provider.of<DbProvider>(context).get();
+    final provider = Provider.of<SearchProvider>(context,listen: false);
+    Provider.of<DbProvider>(context,listen: false).getMedicine();
     return SafeArea(
       child: Scaffold(
-
         appBar: AppBar(
           flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -39,9 +37,7 @@ class ListOfMedicines extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(15),
-              child: Consumer(
-                builder: (context, value, child) => 
-                 TextFormField(
+              child: TextFormField(
                   style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
                     hintText: 'Search',
@@ -62,25 +58,19 @@ class ListOfMedicines extends StatelessWidget {
                     ),
                   ),
                   onChanged: (value) {
-                    // ----------------------
-                   
-                       prd.search = value;
-                  
-                    prd. searchResult(context);
-                
-                    // ---------------------
+                    provider.search = value;
+
+                    provider.searchResult(context);
                   },
                 ),
               ),
-            ),
+          
             Expanded(
-              child: Consumer2<DbProvider,ListProvider>(
-                // valueListenable: medNotifier,
-                builder: (BuildContext ctx,dbvalue, searchvalue,
-               child) {
-               final list = dbvalue.filtered.isNotEmpty
-                    ? dbvalue.filtered
-                    : dbvalue.medicallist;
+              child: Consumer2<DbProvider, SearchProvider>(
+                builder: (BuildContext ctx, dbvalue, searchvalue, child) {
+                  final list = dbvalue.filtered.isNotEmpty
+                      ? dbvalue.filtered
+                      : dbvalue.medicallist;
                   return ListView.separated(
                     itemBuilder: (ctx, index) {
                       final data = list[index];
@@ -136,7 +126,9 @@ class ListOfMedicines extends StatelessWidget {
                                     )),
                                 IconButton(
                                     onPressed: () {
-                                      Provider.of<DbProvider>(context,listen: false).delete(index);
+                                      Provider.of<DbProvider>(context,
+                                              listen: false)
+                                          .deleteMedicide(index);
                                     },
                                     icon: const Icon(Icons.delete,
                                         color:
@@ -150,7 +142,7 @@ class ListOfMedicines extends StatelessWidget {
                     separatorBuilder: (ctx, index) {
                       return const Divider();
                     },
-                    itemCount:list.length,
+                    itemCount: list.length,
                   );
                 },
               ),

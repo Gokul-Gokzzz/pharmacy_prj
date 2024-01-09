@@ -5,7 +5,7 @@ import 'package:health/controller/addprovider.dart';
 import 'package:health/controller/bottombarprovider.dart';
 import 'package:health/controller/dbprovider.dart';
 import 'package:health/controller/editprovider.dart';
-import 'package:health/controller/listprovider.dart';
+import 'package:health/controller/searchprovider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:health/model/mannual/model.dart';
 import 'package:health/views_main/splash_screen.dart';
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             create: (context) => EditProvider(),
           ),
           ChangeNotifierProvider(
-            create:(context) =>  ListProvider(),
+            create:(context) =>  SearchProvider(),
           ),
           ChangeNotifierProvider(
             create: (context) => BottomBarProvider(),

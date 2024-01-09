@@ -12,7 +12,7 @@ class Add extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final prd = Provider.of<AddProvider>(context);
+    final provider = Provider.of<AddProvider>(context);
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -39,7 +39,7 @@ class Add extends StatelessWidget {
         
         child: SingleChildScrollView(
           child: Form(
-            key: prd.formKey,
+            key: provider.formKey,
             child: Column(
               children: [
                 Padding(
@@ -47,22 +47,22 @@ class Add extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 80,
                     backgroundColor: Colors.black,
-                    backgroundImage: prd.selectedImage != null
-                        ? FileImage(prd.selectedImage!)
+                    backgroundImage: provider.selectedImage != null
+                        ? FileImage(provider.selectedImage!)
                         : const AssetImage(
                             "assets/photo-1562243061-204550d8a2c9.png") as ImageProvider,
                   ),
                 ),
                 ElevatedButton.icon(
                   onPressed: () {
-                    prd.pickImage(ImageSource.gallery);
+                    provider.pickImage(ImageSource.gallery);
                   },
                   icon: const Icon(Icons.image),
                   label: const Text('GALLERY'),
                 ),
                 ElevatedButton.icon(
                   onPressed: () {
-                    prd.pickImage(ImageSource.camera);
+                    provider.pickImage(ImageSource.camera);
                   },
                   icon: const Icon(Icons.image),
                   label: const Text('CAMERA'),
@@ -82,7 +82,7 @@ class Add extends StatelessWidget {
                             RegExp(r'[a-z,A-Z," "]'))
                       ],
                       keyboardType: TextInputType.name,
-                      controller: prd.nameController,
+                      controller: provider.nameController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -114,7 +114,7 @@ class Add extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: TextFormField(
                     keyboardType: TextInputType.streetAddress,
-                    controller: prd.addressController,
+                    controller: provider.addressController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -145,7 +145,7 @@ class Add extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: TextFormField(
-                    controller: prd.medicinesController,
+                    controller: provider.medicinesController,
                     keyboardType: TextInputType.streetAddress,
                     decoration: InputDecoration(
                       filled: true,
@@ -180,7 +180,7 @@ class Add extends StatelessWidget {
                       FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
                     ],
                     keyboardType: TextInputType.number,
-                    controller: prd.ageController,
+                    controller: provider.ageController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -211,8 +211,8 @@ class Add extends StatelessWidget {
                 FloatingActionButton(
                   backgroundColor: Colors.blue,
                   onPressed: () {
-                    if (prd.formKey.currentState!.validate()) {
-                      prd.onAdd(context);
+                    if (provider.formKey.currentState!.validate()) {
+                      provider.onAdd(context);
                     }
                   },
                   child: const Icon(Icons.add),

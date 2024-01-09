@@ -10,20 +10,15 @@ class Contact extends StatelessWidget {
         title: const Text('Contact Us'),
       ),
 
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/logo back.jpg'),fit: BoxFit.cover)
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildContactInfo('Email', 'support@GkPharma.com'),
-              _buildContactInfo('Phone', '+91 9065559384'),
-              _buildContactForm(context),
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _buildContactInfo('Email', 'support@GkPharma.com'),
+            _buildContactInfo('Phone', '+91 9065559384'),
+            _buildContactForm(context),
+          ],
         ),
       ),
     );
