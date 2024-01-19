@@ -4,7 +4,7 @@ import 'package:health/service/medi/functions.dart';
 
 class DbProvider extends ChangeNotifier {
   final MedicalServiceDb _medicalservice = MedicalServiceDb();
-  List<Model> medicallist = [];
+  List<Model> medicalList = [];
   List<Model> filtered = [];
 
   Future<void> addMedicine(value) async {
@@ -13,7 +13,7 @@ class DbProvider extends ChangeNotifier {
   }
 
   Future<void> getMedicine() async {
-    medicallist = await _medicalservice.getallMedical();
+    medicalList = await _medicalservice.getallMedical();
     notifyListeners();
   }
 

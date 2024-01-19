@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health/controller/dbprovider.dart';
+import 'package:health/controller/db_provider.dart';
 import 'package:health/model/mannual/model.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +9,7 @@ class SearchProvider extends ChangeNotifier {
 
   void searchResult(BuildContext context) {
     final dbProvider = Provider.of<DbProvider>(context, listen: false);
-    final filteredList = dbProvider.medicallist
+    final filteredList = dbProvider.medicalList
         .where(
             (model) => model.name.toLowerCase().contains(search.toLowerCase()))
         .toList();

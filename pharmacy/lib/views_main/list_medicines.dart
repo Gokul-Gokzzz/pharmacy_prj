@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:health/controller/dbprovider.dart';
-import 'package:health/controller/searchprovider.dart';
+import 'package:health/controller/db_provider.dart';
+import 'package:health/controller/search_provider.dart';
 import 'package:health/views_main/edit.dart';
 import 'package:health/views_main/view.dart';
 import 'package:provider/provider.dart';
@@ -11,8 +11,8 @@ class ListOfMedicines extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<SearchProvider>(context,listen: false);
-    Provider.of<DbProvider>(context,listen: false).getMedicine();
+    final provider = Provider.of<SearchProvider>(context, listen: false);
+    Provider.of<DbProvider>(context, listen: false).getMedicine();
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -38,39 +38,38 @@ class ListOfMedicines extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(15),
               child: TextFormField(
-                  style: const TextStyle(color: Colors.black),
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    contentPadding: const EdgeInsets.all(10),
-                    prefixIcon: const Icon(Icons.search, color: Colors.black),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(75),
-                      borderSide: const BorderSide(color: Colors.transparent),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
-                      borderSide: const BorderSide(
-                        color: Colors.lightBlue,
-                        width: 2,
-                      ),
+                style: const TextStyle(color: Colors.black),
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  contentPadding: const EdgeInsets.all(10),
+                  prefixIcon: const Icon(Icons.search, color: Colors.black),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(75),
+                    borderSide: const BorderSide(color: Colors.transparent),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(
+                      color: Colors.lightBlue,
+                      width: 2,
                     ),
                   ),
-                  onChanged: (value) {
-                    provider.search = value;
-
-                    provider.searchResult(context); 
-                  },
                 ),
+                onChanged: (value) {
+                  provider.search = value;
+
+                  provider.searchResult(context);
+                },
               ),
-          
+            ),
             Expanded(
               child: Consumer<DbProvider>(
-                builder: (BuildContext ctx, dbvalue,child) {
+                builder: (BuildContext ctx, dbvalue, child) {
                   final list = dbvalue.filtered.isNotEmpty
                       ? dbvalue.filtered
-                      : dbvalue.medicallist;
+                      : dbvalue.medicalList;
                   return ListView.separated(
                     itemBuilder: (ctx, index) {
                       final data = list[index];

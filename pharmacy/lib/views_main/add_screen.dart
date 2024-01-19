@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:health/controller/addprovider.dart';
-import 'package:health/controller/dbprovider.dart';
+import 'package:health/controller/add_provider.dart';
+import 'package:health/controller/db_provider.dart';
 import 'package:health/model/mannual/model.dart';
 import 'package:health/views_main/list_medicines.dart';
 import 'package:image_picker/image_picker.dart';
@@ -14,7 +14,7 @@ class Add extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final addscreenprovider = Provider.of<AddProvider>(context);
+    final addScreenProvider = Provider.of<AddProvider>(context);
     return Scaffold(
       appBar: AppBar(
           flexibleSpace: Container(
@@ -41,7 +41,7 @@ class Add extends StatelessWidget {
       body: Container(
         child: SingleChildScrollView(
           child: Form(
-            key: addscreenprovider.formKey,
+            key: addScreenProvider.formKey,
             child: Column(
               children: [
                 Padding(
@@ -52,10 +52,10 @@ class Add extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(12),
-                      image: addscreenprovider.selectedImage != null
+                      image: addScreenProvider.selectedImage != null
                           ? DecorationImage(
                               image:
-                                  FileImage(addscreenprovider.selectedImage!),
+                                  FileImage(addScreenProvider.selectedImage!),
                               fit: BoxFit.cover,
                             )
                           : const DecorationImage(
@@ -68,14 +68,14 @@ class Add extends StatelessWidget {
                 ),
                 ElevatedButton.icon(
                   onPressed: () {
-                    addscreenprovider.pickImage(ImageSource.gallery);
+                    addScreenProvider.pickImage(ImageSource.gallery);
                   },
                   icon: const Icon(Icons.image),
                   label: const Text('GALLERY'),
                 ),
                 ElevatedButton.icon(
                   onPressed: () {
-                    addscreenprovider.pickImage(ImageSource.camera);
+                    addScreenProvider.pickImage(ImageSource.camera);
                   },
                   icon: const Icon(Icons.image),
                   label: const Text('CAMERA'),
@@ -95,7 +95,7 @@ class Add extends StatelessWidget {
                             RegExp(r'[a-z,A-Z," "]'))
                       ],
                       keyboardType: TextInputType.name,
-                      controller: addscreenprovider.nameController,
+                      controller: addScreenProvider.nameController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -127,7 +127,7 @@ class Add extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: TextFormField(
                     keyboardType: TextInputType.streetAddress,
-                    controller: addscreenprovider.addressController,
+                    controller: addScreenProvider.addressController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -158,7 +158,7 @@ class Add extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: TextFormField(
-                    controller: addscreenprovider.medicinesController,
+                    controller: addScreenProvider.medicinesController,
                     keyboardType: TextInputType.streetAddress,
                     decoration: InputDecoration(
                       filled: true,
@@ -193,7 +193,7 @@ class Add extends StatelessWidget {
                       FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
                     ],
                     keyboardType: TextInputType.number,
-                    controller: addscreenprovider.ageController,
+                    controller: addScreenProvider.ageController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -226,7 +226,7 @@ class Add extends StatelessWidget {
                 FloatingActionButton(
                   backgroundColor: Colors.blue,
                   onPressed: () {
-                    if (addscreenprovider.formKey.currentState!.validate()) {
+                    if (addScreenProvider.formKey.currentState!.validate()) {
                       onClick(context);
                     }
                   },
