@@ -1,9 +1,6 @@
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-
-
 
 class ViewScreen extends StatelessWidget {
   final String name;
@@ -12,7 +9,8 @@ class ViewScreen extends StatelessWidget {
   final String age;
   final String imagePath;
 
-  const ViewScreen({super.key, 
+  const ViewScreen({
+    super.key,
     required this.name,
     required this.address,
     required this.medicine,
@@ -25,18 +23,17 @@ class ViewScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color.fromARGB(255, 56, 56, 58),
-        appBar: AppBar(  flexibleSpace: Container(
-              decoration: const BoxDecoration(
+        appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
                   Colors.blue,
-                   Colors.blueGrey ,
-                  ]
-                  )
-              ),
-            ),
+                  Colors.blueGrey,
+                ])),
+          ),
           elevation: 0,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
@@ -56,7 +53,8 @@ class ViewScreen extends StatelessWidget {
                   width: 160,
                   height: 160,
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(40),
                     color: Colors.lightBlue,
                     boxShadow: [
                       BoxShadow(
@@ -76,22 +74,22 @@ class ViewScreen extends StatelessWidget {
                 CardItem(
                   title: 'Name',
                   content: name,
-                   color: false,
+                  color: false,
                 ),
                 CardItem(
                   title: 'Address',
                   content: address,
-                   color: true,
+                  color: true,
                 ),
                 CardItem(
                   title: 'Medicine',
                   content: medicine,
-                   color: false,
+                  color: false,
                 ),
                 CardItem(
                   title: 'Age',
                   content: age,
-                 color: true,
+                  color: true,
                 ),
               ],
             ),
@@ -105,26 +103,26 @@ class ViewScreen extends StatelessWidget {
 class CardItem extends StatelessWidget {
   final String title;
   final String content;
-   final bool color;
+  final bool color;
 
-  const CardItem({super.key, 
+  const CardItem({
+    super.key,
     required this.title,
     required this.content,
-     required this.color,
+    required this.color,
   });
 
   @override
   Widget build(BuildContext context) {
     final bgColor = color ? Colors.transparent : Colors.transparent;
-    final textColor =
-        color ?Colors.white : Colors.red;
+    final textColor = color ? Colors.white : Colors.red;
 
     return Card(
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-       color: bgColor,
+      color: bgColor,
       child: Container(
         padding: const EdgeInsets.all(20),
         width: double.infinity,
@@ -137,16 +135,14 @@ class CardItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
-                 color: textColor,
+                color: textColor,
               ),
             ),
             const SizedBox(height: 8),
             Text(
               content,
               style: TextStyle(
-                  fontSize: 20, fontWeight: FontWeight.bold,
-                    color: textColor
-                   ),
+                  fontSize: 20, fontWeight: FontWeight.bold, color: textColor),
             ),
           ],
         ),

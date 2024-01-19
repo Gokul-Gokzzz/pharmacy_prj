@@ -60,14 +60,14 @@ class ListOfMedicines extends StatelessWidget {
                   onChanged: (value) {
                     provider.search = value;
 
-                    provider.searchResult(context);
+                    provider.searchResult(context); 
                   },
                 ),
               ),
           
             Expanded(
-              child: Consumer2<DbProvider, SearchProvider>(
-                builder: (BuildContext ctx, dbvalue, searchvalue, child) {
+              child: Consumer<DbProvider>(
+                builder: (BuildContext ctx, dbvalue,child) {
                   final list = dbvalue.filtered.isNotEmpty
                       ? dbvalue.filtered
                       : dbvalue.medicallist;

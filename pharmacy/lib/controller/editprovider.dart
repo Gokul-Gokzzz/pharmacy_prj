@@ -21,6 +21,8 @@ class EditProvider extends ChangeNotifier{
 
    
       selectedImage = File(returnImage.path);
+
+      notifyListeners();
    
   }
 
