@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health/model/mannual/model.dart';
-import 'package:health/service/medi/functions.dart';
+import 'package:health/model/model.dart';
+import 'package:health/service/functions.dart';
 
 class DbProvider extends ChangeNotifier {
   final MedicalServiceDb _medicalservice = MedicalServiceDb();

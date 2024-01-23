@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:health/views_main/tab.dart/widget/med.dart';
+import 'package:health/widget/widget/med.dart';
 import 'package:health/theme/colors.dart';
 import 'package:health/widget/button.dart';
 import 'package:health/widget/medlist.dart';

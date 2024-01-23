@@ -2,8 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:health/controller/db_provider.dart';
 import 'package:health/controller/search_provider.dart';
-import 'package:health/views_main/edit.dart';
-import 'package:health/views_main/view.dart';
+import 'package:health/views/edit.dart';
+import 'package:health/views/view.dart';
 import 'package:provider/provider.dart';
 
 class ListOfMedicines extends StatelessWidget {
@@ -40,11 +40,11 @@ class ListOfMedicines extends StatelessWidget {
               child: TextFormField(
                 style: const TextStyle(color: Colors.black),
                 decoration: InputDecoration(
-                  hintText: 'Search',
+                  hintText: '𝕾𝖊𝖆𝖗𝖈𝖍 ',
                   contentPadding: const EdgeInsets.all(10),
                   prefixIcon: const Icon(Icons.search, color: Colors.black),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(75),
+                    borderRadius: BorderRadius.circular(20),
                     borderSide: const BorderSide(color: Colors.transparent),
                   ),
                   filled: true,

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:health/widget/widget.dart';
 
@@ -13,19 +11,19 @@ class Health extends StatelessWidget {
         centerTitle: true,
         title: const Text('Health Tips'),
       ),
-      body: Column(
-        children: [
-          InkWell(
-            onTap: () {
-              // _showImageDialog(context);
-            },
-            child: const Image(
-              image: AssetImage(
-                  'assets/360_F_462160280_W3ZVodLcVwj7BkiZs8RP1wR5LCClQAm9.jpg'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            InkWell(
+              onTap: () {},
+              child: const Image(
+                image: AssetImage(
+                    'assets/360_F_462160280_W3ZVodLcVwj7BkiZs8RP1wR5LCClQAm9.jpg'),
+              ),
             ),
-          ), 
-          healthcare(),
-        ],
+            healthcare(),
+          ],
+        ),
       ),
     );
   }

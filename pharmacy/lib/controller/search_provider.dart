@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health/controller/db_provider.dart';
-import 'package:health/model/mannual/model.dart';
+import 'package:health/model/model.dart';
 import 'package:provider/provider.dart';
 
 class SearchProvider extends ChangeNotifier {

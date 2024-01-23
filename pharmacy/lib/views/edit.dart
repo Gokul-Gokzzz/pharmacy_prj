@@ -5,8 +5,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:health/controller/db_provider.dart';
 import 'package:health/controller/edit_provider.dart';
-import 'package:health/model/mannual/model.dart';
-import 'package:health/views_main/list_medicines.dart';
+import 'package:health/model/model.dart';
+import 'package:health/views/list_medicines.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 

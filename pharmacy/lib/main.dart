@@ -6,9 +6,9 @@ import 'package:health/controller/bottom_bar_provider.dart';
 import 'package:health/controller/db_provider.dart';
 import 'package:health/controller/edit_provider.dart';
 import 'package:health/controller/search_provider.dart';
+import 'package:health/model/model.dart';
+import 'package:health/views/splash_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:health/model/mannual/model.dart';
-import 'package:health/views_main/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 const save_key_name = 'UserLogin';
